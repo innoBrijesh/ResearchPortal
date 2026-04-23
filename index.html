@@ -1457,37 +1457,48 @@
 
 <p>Detailed module-wise effort, expressed in <strong>person-days</strong> (1 day = 8 hours). Includes development, unit testing, code review and standard QA. Cross-cutting workstreams (DevOps, security, automation) are listed separately.</p>
 
+<div class="callout">
+  <p><strong>Effort vs Duration &mdash; how to read this section.</strong></p>
+  <p>Backend and Frontend engineers work <strong>in parallel</strong> on each module &mdash; not one after the other. So per module we report two numbers:</p>
+  <ul>
+    <li><strong>Effort (BE + FE)</strong> &mdash; total human person-days; this is what we plan capacity and billing against.</li>
+    <li><strong>Wall-clock (parallel)</strong> = <code>max(BE, FE)</code> &mdash; the calendar time the module actually takes when one BE and one FE engineer work on it concurrently.</li>
+  </ul>
+  <p>The 11-month delivery timeline in Section 7 is derived from the wall-clock view across <strong>2 parallel BE+FE tracks</strong> + a dedicated React Native engineer for the mobile app + cross-cutting workstreams running alongside. See Section 8.3 for the full team-capacity math.</p>
+</div>
+
 <h3>8.1 Functional Modules (18 Modules)</h3>
 <table>
   <thead>
     <tr>
       <th style="width:5%">#</th>
-      <th style="width:38%">Module</th>
-      <th class="right" style="width:11%">Backend (days)</th>
-      <th class="right" style="width:11%">Frontend (days)</th>
-      <th class="right" style="width:11%">Total (days)</th>
-      <th style="width:24%">Notes</th>
+      <th style="width:34%">Module</th>
+      <th class="right" style="width:9%">BE (days)</th>
+      <th class="right" style="width:9%">FE (days)</th>
+      <th class="right" style="width:11%">Effort (BE+FE)</th>
+      <th class="right" style="width:12%">Wall-clock (parallel)</th>
+      <th style="width:20%">Notes</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>M1</td><td>Authentication &amp; Access (passwordless, 3-device, OTP, captcha, cookie consent)</td><td class="right">14</td><td class="right">12</td><td class="right"><strong>26</strong></td><td>FingerprintJS + active-session UI</td></tr>
-    <tr><td>M2</td><td>Disclosures &amp; Terms (SEBI dynamic, Word-template-driven)</td><td class="right">10</td><td class="right">6</td><td class="right"><strong>16</strong></td><td>docx parser + per-report injection</td></tr>
-    <tr><td>M3</td><td>Dashboard (feed/sort/filter/tags/cloud/events/tour/key-reports)</td><td class="right">10</td><td class="right">20</td><td class="right"><strong>30</strong></td><td>Tag cloud + product tour</td></tr>
-    <tr><td>M4</td><td>User Profile &amp; Preferences (avatar, prefs, follow, bookmarks)</td><td class="right">8</td><td class="right">12</td><td class="right"><strong>20</strong></td><td>Follow graph + read-later</td></tr>
-    <tr><td>M5</td><td>Coverage &mdash; View by Sector (47 sectors, treemap, bubble, XY)</td><td class="right">12</td><td class="right">24</td><td class="right"><strong>36</strong></td><td>Recharts / D3 interactivity</td></tr>
-    <tr><td>M6</td><td>Coverage &mdash; View by Stock (270+ stocks, price, financials, peers, HWAK)</td><td class="right">20</td><td class="right">30</td><td class="right"><strong>50</strong></td><td>Excel export + many charts</td></tr>
-    <tr><td>M7</td><td>Research Reports &mdash; Listing &amp; HTML5 Detail (TOC/AI/audio/Trigger-to-Connect/Focus)</td><td class="right">22</td><td class="right">42</td><td class="right"><strong>64</strong></td><td>The heart of the platform</td></tr>
-    <tr><td>M8</td><td><strong>Events Module (NEW)</strong> &mdash; conferences, RSVP, dashboard widget</td><td class="right">8</td><td class="right">10</td><td class="right"><strong>18</strong></td><td>Email notifications</td></tr>
-    <tr><td>M9</td><td>HWAK Analytics (Full Rebuild) &mdash; deciles, heatmap, drill-down</td><td class="right">12</td><td class="right">22</td><td class="right"><strong>34</strong></td><td>Cross-filter charts</td></tr>
-    <tr><td>M10</td><td><strong>ESG / Corporate Governance (NEW)</strong> &mdash; scoring, heatmaps, comparatives</td><td class="right">14</td><td class="right">22</td><td class="right"><strong>36</strong></td><td>Awaits scoring spec</td></tr>
-    <tr><td>M11</td><td>Data Analytics Dashboards (Valuation, MF Tracker, NSE500 Reckoner)</td><td class="right">12</td><td class="right">18</td><td class="right"><strong>30</strong></td><td>Column chooser + Excel export</td></tr>
-    <tr><td>M12</td><td><strong>Publishing Authors (NEW)</strong> &mdash; cards, profile, Q&amp;A, 1:1 booking (Calendly)</td><td class="right">14</td><td class="right">18</td><td class="right"><strong>32</strong></td><td>Q&amp;A moderation + booking integration</td></tr>
-    <tr><td>M13</td><td><strong>Corporate Access &amp; Bespoke Work (NEW)</strong> &mdash; static + Experts + Podcasts + Bespoke form</td><td class="right">6</td><td class="right">10</td><td class="right"><strong>16</strong></td><td>CRUD + media embed</td></tr>
-    <tr><td>M14</td><td>Editorial CMS &amp; Workflow (queue/checkout-lock/TipTap WYSIWYG/HWAK upload)</td><td class="right">28</td><td class="right">32</td><td class="right"><strong>60</strong></td><td>Largest editorial module</td></tr>
-    <tr><td>M15</td><td>Admin Modules (User/RBAC, Sector/Company/Event mgmt, NSE&harr;BBG mapping, all logs &amp; analytics)</td><td class="right">28</td><td class="right">34</td><td class="right"><strong>62</strong></td><td>Consolidated admin surface</td></tr>
-    <tr><td>M16</td><td>Mobile App &mdash; A-ONE Research (RN + Expo, full app w/ offline + biometric)</td><td class="right">10</td><td class="right">90</td><td class="right"><strong>100</strong></td><td>iOS + Android + offline + push</td></tr>
-    <tr><td>M17</td><td>Integration Layer + SEBI Compliance Engine (Trigger + 3 fetch APIs + AI/Audio/HTML workers + audit + Object Lock)</td><td class="right">42</td><td class="right">6</td><td class="right"><strong>48</strong></td><td>SQS + retry/DLQ + WORM archive</td></tr>
-    <tr><td>M18</td><td>Cross-cutting (Search, Notifications, Performance budget, A11y)</td><td class="right">12</td><td class="right">18</td><td class="right"><strong>30</strong></td><td>OpenSearch + WCAG AA</td></tr>
+    <tr><td>M1</td><td>Authentication &amp; Access (passwordless, 3-device, OTP, captcha, cookie consent)</td><td class="right">14</td><td class="right">12</td><td class="right">26</td><td class="right"><strong>14</strong></td><td>FingerprintJS + active-session UI</td></tr>
+    <tr><td>M2</td><td>Disclosures &amp; Terms (SEBI dynamic, Word-template-driven)</td><td class="right">10</td><td class="right">6</td><td class="right">16</td><td class="right"><strong>10</strong></td><td>docx parser + per-report injection</td></tr>
+    <tr><td>M3</td><td>Dashboard (feed/sort/filter/tags/cloud/events/tour/key-reports)</td><td class="right">10</td><td class="right">20</td><td class="right">30</td><td class="right"><strong>20</strong></td><td>Tag cloud + product tour</td></tr>
+    <tr><td>M4</td><td>User Profile &amp; Preferences (avatar, prefs, follow, bookmarks)</td><td class="right">8</td><td class="right">12</td><td class="right">20</td><td class="right"><strong>12</strong></td><td>Follow graph + read-later</td></tr>
+    <tr><td>M5</td><td>Coverage &mdash; View by Sector (47 sectors, treemap, bubble, XY)</td><td class="right">12</td><td class="right">24</td><td class="right">36</td><td class="right"><strong>24</strong></td><td>Recharts / D3 interactivity</td></tr>
+    <tr><td>M6</td><td>Coverage &mdash; View by Stock (270+ stocks, price, financials, peers, HWAK)</td><td class="right">20</td><td class="right">30</td><td class="right">50</td><td class="right"><strong>30</strong></td><td>Excel export + many charts</td></tr>
+    <tr><td>M7</td><td>Research Reports &mdash; Listing &amp; HTML5 Detail (TOC/AI/audio/Trigger-to-Connect/Focus)</td><td class="right">22</td><td class="right">42</td><td class="right">64</td><td class="right"><strong>42</strong></td><td>The heart of the platform</td></tr>
+    <tr><td>M8</td><td><strong>Events Module (NEW)</strong> &mdash; conferences, RSVP, dashboard widget</td><td class="right">8</td><td class="right">10</td><td class="right">18</td><td class="right"><strong>10</strong></td><td>Email notifications</td></tr>
+    <tr><td>M9</td><td>HWAK Analytics (Full Rebuild) &mdash; deciles, heatmap, drill-down</td><td class="right">12</td><td class="right">22</td><td class="right">34</td><td class="right"><strong>22</strong></td><td>Cross-filter charts</td></tr>
+    <tr><td>M10</td><td><strong>ESG / Corporate Governance (NEW)</strong> &mdash; scoring, heatmaps, comparatives</td><td class="right">14</td><td class="right">22</td><td class="right">36</td><td class="right"><strong>22</strong></td><td>Awaits scoring spec</td></tr>
+    <tr><td>M11</td><td>Data Analytics Dashboards (Valuation, MF Tracker, NSE500 Reckoner)</td><td class="right">12</td><td class="right">18</td><td class="right">30</td><td class="right"><strong>18</strong></td><td>Column chooser + Excel export</td></tr>
+    <tr><td>M12</td><td><strong>Publishing Authors (NEW)</strong> &mdash; cards, profile, Q&amp;A, 1:1 booking (Calendly)</td><td class="right">14</td><td class="right">18</td><td class="right">32</td><td class="right"><strong>18</strong></td><td>Q&amp;A moderation + booking integration</td></tr>
+    <tr><td>M13</td><td><strong>Corporate Access &amp; Bespoke Work (NEW)</strong> &mdash; static + Experts + Podcasts + Bespoke form</td><td class="right">6</td><td class="right">10</td><td class="right">16</td><td class="right"><strong>10</strong></td><td>CRUD + media embed</td></tr>
+    <tr><td>M14</td><td>Editorial CMS &amp; Workflow (queue/checkout-lock/TipTap WYSIWYG/HWAK upload)</td><td class="right">28</td><td class="right">32</td><td class="right">60</td><td class="right"><strong>32</strong></td><td>Largest editorial module</td></tr>
+    <tr><td>M15</td><td>Admin Modules (User/RBAC, Sector/Company/Event mgmt, NSE&harr;BBG mapping, all logs &amp; analytics)</td><td class="right">28</td><td class="right">34</td><td class="right">62</td><td class="right"><strong>34</strong></td><td>Consolidated admin surface</td></tr>
+    <tr><td>M16</td><td>Mobile App &mdash; A-ONE Research (RN + Expo, full app w/ offline + biometric)</td><td class="right">10</td><td class="right">90</td><td class="right">100</td><td class="right"><strong>90</strong></td><td>RN engineer (FE) parallel to BE API</td></tr>
+    <tr><td>M17</td><td>Integration Layer + SEBI Compliance Engine (Trigger + 3 fetch APIs + AI/Audio/HTML workers + audit + Object Lock)</td><td class="right">42</td><td class="right">6</td><td class="right">48</td><td class="right"><strong>42</strong></td><td>SQS + retry/DLQ + WORM archive</td></tr>
+    <tr><td>M18</td><td>Cross-cutting (Search, Notifications, Performance budget, A11y)</td><td class="right">12</td><td class="right">18</td><td class="right">30</td><td class="right"><strong>18</strong></td><td>OpenSearch + WCAG AA</td></tr>
   </tbody>
   <tfoot>
     <tr style="background:#f1f5f9;font-weight:700">
@@ -1495,10 +1506,12 @@
       <td class="right">282</td>
       <td class="right">426</td>
       <td class="right"><strong>708</strong></td>
-      <td>person-days</td>
+      <td class="right"><strong>468</strong></td>
+      <td>person-days / wall-clock days</td>
     </tr>
   </tfoot>
 </table>
+<p class="legend">Sum of <em>wall-clock days</em> (468) is the timeline for one BE+FE pair doing all 18 modules sequentially. With 2 parallel BE+FE tracks plus a dedicated RN engineer for M16, the dev phase compresses to ~190 working days &mdash; see 8.3 below.</p>
 
 <h3>8.2 Cross-Cutting Engineering Workstreams</h3>
 <table>
@@ -1524,13 +1537,14 @@
   </tfoot>
 </table>
 
-<h3>8.3 Effort Roll-Up</h3>
+<h3>8.3 Effort Roll-Up &mdash; Total Cost Basis</h3>
+<p>This is the total <strong>billable effort</strong> &mdash; the sum of every person-day spent on the project, regardless of who does it in parallel.</p>
 <table>
   <thead>
     <tr><th style="width:60%">Bucket</th><th class="right">Person-Days</th></tr>
   </thead>
   <tbody>
-    <tr><td>Functional Modules (M1&ndash;M18)</td><td class="right">708</td></tr>
+    <tr><td>Functional Modules (M1&ndash;M18) &mdash; BE + FE summed</td><td class="right">708</td></tr>
     <tr><td>Cross-Cutting Engineering (C1&ndash;C9)</td><td class="right">188</td></tr>
     <tr><td>Project Management &amp; client communication (~10%)</td><td class="right">90</td></tr>
     <tr><td>Sub-total</td><td class="right">986</td></tr>
@@ -1544,14 +1558,77 @@
   </tfoot>
 </table>
 
+<h3>8.4 Parallelized Timeline &mdash; How 1,098 Person-Days Becomes ~11 Calendar Months</h3>
+<p>The 5.8&#8209;FTE team works <strong>concurrently</strong> on multiple tracks. Backend, Frontend, Mobile, DevOps and QA do not stand in line &mdash; they execute in parallel from day one. Here is how the wall-clock math works out.</p>
+<table>
+  <thead>
+    <tr>
+      <th style="width:32%">Track</th>
+      <th>Who runs it</th>
+      <th class="right" style="width:13%">Days of work</th>
+      <th class="right" style="width:13%">Parallel tracks</th>
+      <th class="right" style="width:14%">Wall-clock (working days)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Web modules</strong> (M1&ndash;M15, M17, M18 &mdash; excluding M16)</td>
+      <td>2 Senior BE + 2 Senior FE engineers paired into 2 BE+FE tracks</td>
+      <td class="right">378</td>
+      <td class="right">2</td>
+      <td class="right"><strong>~ 189</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Mobile App</strong> (M16)</td>
+      <td>1 React Native engineer + 10 days BE support (absorbed by Web BE)</td>
+      <td class="right">90</td>
+      <td class="right">1</td>
+      <td class="right"><strong>~ 90</strong> (overlaps Web)</td>
+    </tr>
+    <tr>
+      <td><strong>Cross-cutting</strong> (C1&ndash;C9: CI/CD, IaC, DB, E2E, perf, security, observability, docs, UAT)</td>
+      <td>Tech Lead + DevOps (30%) + QA (50%), running alongside dev</td>
+      <td class="right">188</td>
+      <td class="right">parallel to dev</td>
+      <td class="right"><strong>absorbed</strong></td>
+    </tr>
+    <tr>
+      <td><strong>PM &amp; client communication</strong></td>
+      <td>Project Manager (30%)</td>
+      <td class="right">90</td>
+      <td class="right">parallel to all</td>
+      <td class="right"><strong>absorbed</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Buffer / contingency</strong></td>
+      <td>Reserved across team</td>
+      <td class="right">112</td>
+      <td class="right">&mdash;</td>
+      <td class="right"><strong>~ 25</strong></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr style="background:#f1f5f9;font-weight:700">
+      <td colspan="4" class="right">Critical-path wall-clock (web track + buffer)</td>
+      <td class="right"><strong>~ 214 working days</strong></td>
+    </tr>
+    <tr style="background:#1e40af;color:#fff;font-weight:700">
+      <td colspan="4" class="right">Calendar duration (~22 working days / month)</td>
+      <td class="right"><strong>~ 11 calendar months</strong></td>
+    </tr>
+  </tfoot>
+</table>
+
+<p class="legend"><strong>Sanity check:</strong> 5.8 FTE &times; 22 working days/month &times; 11 months = <strong>~ 1,404 available person-days</strong>. We are committing <strong>1,098 person-days</strong> of productive work &mdash; the ~22% headroom covers public holidays, leave, ramp-up, sprint ceremonies and stakeholder reviews. The plan is achievable without burnout.</p>
+
 <div class="kpi-row">
-  <div class="kpi"><span class="kpi-num">18</span><span class="kpi-label">Functional Modules</span></div>
-  <div class="kpi"><span class="kpi-num">~1,098</span><span class="kpi-label">Person-Days</span></div>
+  <div class="kpi"><span class="kpi-num">~1,098</span><span class="kpi-label">Person-Days (Effort)</span></div>
+  <div class="kpi"><span class="kpi-num">~214</span><span class="kpi-label">Wall-Clock Days</span></div>
   <div class="kpi"><span class="kpi-num">~11</span><span class="kpi-label">Calendar Months</span></div>
   <div class="kpi"><span class="kpi-num">5.8</span><span class="kpi-label">FTE Core Team</span></div>
 </div>
 
-<h3>8.4 Recommended Team</h3>
+<h3>8.5 Recommended Team</h3>
 <table>
   <thead>
     <tr><th>Role</th><th>Allocation</th><th>Responsibility</th></tr>
