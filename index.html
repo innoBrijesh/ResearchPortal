@@ -856,7 +856,7 @@
     <li><a href="#assumptions" class="toc-link">Assumptions</a></li>
     <li><a href="#oos" class="toc-link">Out of Scope</a></li>
     <li><a href="#timeline" class="toc-link">Timeline Estimate</a></li>
-    <li><a href="#effort" class="toc-link">Effort Estimation</a></li>
+    <li><a href="#effort" class="toc-link">Module Delivery Schedule</a></li>
     <li><a href="#deliverables" class="toc-link">Deliverables</a></li>
     <li><a href="#risks" class="toc-link">Risks &amp; Dependencies</a></li>
     <li><a href="#metrics" class="toc-link">Success Metrics</a></li>
@@ -906,7 +906,7 @@
       <li><a href="#assumptions">Assumptions</a></li>
       <li><a href="#oos">Out of Scope</a></li>
       <li><a href="#timeline">Timeline Estimate</a></li>
-      <li><a href="#effort">Effort Estimation</a></li>
+      <li><a href="#effort">Module Delivery Schedule</a></li>
       <li><a href="#deliverables">Deliverables</a></li>
       <li><a href="#risks">Risks &amp; Dependencies</a></li>
       <li><a href="#metrics">Project Success Metrics</a></li>
@@ -1254,7 +1254,7 @@
   </thead>
   <tbody>
     <tr><td><strong>Web Frontend</strong></td><td>React 18 + TypeScript + Next.js + Recharts/D3</td><td>Fast, SEO-friendly for short-link sharing; rich charting for analytics</td></tr>
-    <tr><td><strong>Mobile App</strong></td><td>React Native + Expo + MMKV (secure storage)</td><td>Single codebase for iOS &amp; Android &mdash; ~40% cost &amp; time saving vs. native</td></tr>
+    <tr><td><strong>Mobile App</strong></td><td>React Native + Expo + MMKV (secure storage)</td><td>Single codebase for iOS &amp; Android &mdash; faster delivery vs. native development</td></tr>
     <tr><td><strong>WYSIWYG Editor</strong></td><td>TipTap (ProseMirror-based)</td><td>Loads full HTML for editorial in-line corrections; extensible</td></tr>
     <tr><td><strong>Device Fingerprint</strong></td><td>FingerprintJS Pro</td><td>Underpins passwordless 3-device cache-token auth</td></tr>
     <tr><td><strong>Backend</strong></td><td>Node.js (NestJS) &mdash; modular service-oriented</td><td>Aligned with React talent pool; async-first for AI &amp; integration workloads</td></tr>
@@ -1453,195 +1453,86 @@
 <p class="legend">Total combined duration: <strong>~11 calendar months</strong> from kickoff to legacy portal sunset, assuming team availability and timely client UAT cycles.</p>
 
 <!-- ==================== 8. EFFORT ESTIMATION ==================== -->
-<h2 id="effort">8. Effort Estimation</h2>
+<h2 id="effort">8. Module Delivery Schedule</h2>
 
-<p>Detailed module-wise effort, expressed in <strong>person-days</strong> (1 day = 8 hours). Includes development, unit testing, code review and standard QA. Cross-cutting workstreams (DevOps, security, automation) are listed separately.</p>
+<p>This section maps each functional module to its delivery <strong>phase</strong> and gives an indicative <strong>wall-clock duration</strong> &mdash; i.e. the calendar time the module will be in active build, with backend and frontend engineers working on it in parallel. Sequencing within each phase is shown in Section 7.</p>
 
-<div class="callout">
-  <p><strong>Effort vs Duration &mdash; how to read this section.</strong></p>
-  <p>Backend and Frontend engineers work <strong>in parallel</strong> on each module &mdash; not one after the other. So per module we report two numbers:</p>
-  <ul>
-    <li><strong>Effort (BE + FE)</strong> &mdash; total human person-days; this is what we plan capacity and billing against.</li>
-    <li><strong>Wall-clock (parallel)</strong> = <code>max(BE, FE)</code> &mdash; the calendar time the module actually takes when one BE and one FE engineer work on it concurrently.</li>
-  </ul>
-  <p>The 11-month delivery timeline in Section 7 is derived from the wall-clock view across <strong>2 parallel BE+FE tracks</strong> + a dedicated React Native engineer for the mobile app + cross-cutting workstreams running alongside. See Section 8.3 for the full team-capacity math.</p>
-</div>
-
-<h3>8.1 Functional Modules (18 Modules)</h3>
+<h3>8.1 Functional Modules &mdash; Phase &amp; Duration</h3>
 <table>
   <thead>
     <tr>
       <th style="width:5%">#</th>
-      <th style="width:34%">Module</th>
-      <th class="right" style="width:9%">BE (days)</th>
-      <th class="right" style="width:9%">FE (days)</th>
-      <th class="right" style="width:11%">Effort (BE+FE)</th>
-      <th class="right" style="width:12%">Wall-clock (parallel)</th>
-      <th style="width:20%">Notes</th>
+      <th style="width:42%">Module</th>
+      <th style="width:13%">Phase</th>
+      <th class="right" style="width:14%">Wall-clock duration</th>
+      <th style="width:26%">Notes</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>M1</td><td>Authentication &amp; Access (passwordless, 3-device, OTP, captcha, cookie consent)</td><td class="right">14</td><td class="right">12</td><td class="right">26</td><td class="right"><strong>14</strong></td><td>FingerprintJS + active-session UI</td></tr>
-    <tr><td>M2</td><td>Disclosures &amp; Terms (SEBI dynamic, Word-template-driven)</td><td class="right">10</td><td class="right">6</td><td class="right">16</td><td class="right"><strong>10</strong></td><td>docx parser + per-report injection</td></tr>
-    <tr><td>M3</td><td>Dashboard (feed/sort/filter/tags/cloud/events/tour/key-reports)</td><td class="right">10</td><td class="right">20</td><td class="right">30</td><td class="right"><strong>20</strong></td><td>Tag cloud + product tour</td></tr>
-    <tr><td>M4</td><td>User Profile &amp; Preferences (avatar, prefs, follow, bookmarks)</td><td class="right">8</td><td class="right">12</td><td class="right">20</td><td class="right"><strong>12</strong></td><td>Follow graph + read-later</td></tr>
-    <tr><td>M5</td><td>Coverage &mdash; View by Sector (47 sectors, treemap, bubble, XY)</td><td class="right">12</td><td class="right">24</td><td class="right">36</td><td class="right"><strong>24</strong></td><td>Recharts / D3 interactivity</td></tr>
-    <tr><td>M6</td><td>Coverage &mdash; View by Stock (270+ stocks, price, financials, peers, HWAK)</td><td class="right">20</td><td class="right">30</td><td class="right">50</td><td class="right"><strong>30</strong></td><td>Excel export + many charts</td></tr>
-    <tr><td>M7</td><td>Research Reports &mdash; Listing &amp; HTML5 Detail (TOC/AI/audio/Trigger-to-Connect/Focus)</td><td class="right">22</td><td class="right">42</td><td class="right">64</td><td class="right"><strong>42</strong></td><td>The heart of the platform</td></tr>
-    <tr><td>M8</td><td><strong>Events Module (NEW)</strong> &mdash; conferences, RSVP, dashboard widget</td><td class="right">8</td><td class="right">10</td><td class="right">18</td><td class="right"><strong>10</strong></td><td>Email notifications</td></tr>
-    <tr><td>M9</td><td>HWAK Analytics (Full Rebuild) &mdash; deciles, heatmap, drill-down</td><td class="right">12</td><td class="right">22</td><td class="right">34</td><td class="right"><strong>22</strong></td><td>Cross-filter charts</td></tr>
-    <tr><td>M10</td><td><strong>ESG / Corporate Governance (NEW)</strong> &mdash; scoring, heatmaps, comparatives</td><td class="right">14</td><td class="right">22</td><td class="right">36</td><td class="right"><strong>22</strong></td><td>Awaits scoring spec</td></tr>
-    <tr><td>M11</td><td>Data Analytics Dashboards (Valuation, MF Tracker, NSE500 Reckoner)</td><td class="right">12</td><td class="right">18</td><td class="right">30</td><td class="right"><strong>18</strong></td><td>Column chooser + Excel export</td></tr>
-    <tr><td>M12</td><td><strong>Publishing Authors (NEW)</strong> &mdash; cards, profile, Q&amp;A, 1:1 booking (Calendly)</td><td class="right">14</td><td class="right">18</td><td class="right">32</td><td class="right"><strong>18</strong></td><td>Q&amp;A moderation + booking integration</td></tr>
-    <tr><td>M13</td><td><strong>Corporate Access &amp; Bespoke Work (NEW)</strong> &mdash; static + Experts + Podcasts + Bespoke form</td><td class="right">6</td><td class="right">10</td><td class="right">16</td><td class="right"><strong>10</strong></td><td>CRUD + media embed</td></tr>
-    <tr><td>M14</td><td>Editorial CMS &amp; Workflow (queue/checkout-lock/TipTap WYSIWYG/HWAK upload)</td><td class="right">28</td><td class="right">32</td><td class="right">60</td><td class="right"><strong>32</strong></td><td>Largest editorial module</td></tr>
-    <tr><td>M15</td><td>Admin Modules (User/RBAC, Sector/Company/Event mgmt, NSE&harr;BBG mapping, all logs &amp; analytics)</td><td class="right">28</td><td class="right">34</td><td class="right">62</td><td class="right"><strong>34</strong></td><td>Consolidated admin surface</td></tr>
-    <tr><td>M16</td><td>Mobile App &mdash; A-ONE Research (RN + Expo, full app w/ offline + biometric)</td><td class="right">10</td><td class="right">90</td><td class="right">100</td><td class="right"><strong>90</strong></td><td>RN engineer (FE) parallel to BE API</td></tr>
-    <tr><td>M17</td><td>Integration Layer + SEBI Compliance Engine (Trigger + 3 fetch APIs + AI/Audio/HTML workers + audit + Object Lock)</td><td class="right">42</td><td class="right">6</td><td class="right">48</td><td class="right"><strong>42</strong></td><td>SQS + retry/DLQ + WORM archive</td></tr>
-    <tr><td>M18</td><td>Cross-cutting (Search, Notifications, Performance budget, A11y)</td><td class="right">12</td><td class="right">18</td><td class="right">30</td><td class="right"><strong>18</strong></td><td>OpenSearch + WCAG AA</td></tr>
+    <tr><td>M1</td><td>Authentication &amp; Access (passwordless, 3-device, OTP, captcha, cookie consent)</td><td>Phase 1A</td><td class="right">~ 3 weeks</td><td>FingerprintJS + active-session UI</td></tr>
+    <tr><td>M2</td><td>Disclosures &amp; Terms (SEBI dynamic, Word-template-driven)</td><td>Phase 1A</td><td class="right">~ 2 weeks</td><td>docx parser + per-report injection</td></tr>
+    <tr><td>M3</td><td>Dashboard (feed / sort / filter / tags / cloud / events / tour / key-reports)</td><td>Phase 1C</td><td class="right">~ 4 weeks</td><td>Tag cloud + product tour</td></tr>
+    <tr><td>M4</td><td>User Profile &amp; Preferences (avatar, prefs, follow, bookmarks)</td><td>Phase 1C</td><td class="right">~ 2.5 weeks</td><td>Follow graph + read-later</td></tr>
+    <tr><td>M5</td><td>Coverage &mdash; View by Sector (47 sectors, treemap, bubble, XY)</td><td>Phase 1D</td><td class="right">~ 5 weeks</td><td>Recharts / D3 interactivity</td></tr>
+    <tr><td>M6</td><td>Coverage &mdash; View by Stock (270+ stocks, price, financials, peers, HWAK)</td><td>Phase 1C&ndash;1D</td><td class="right">~ 6 weeks</td><td>Excel export + many charts</td></tr>
+    <tr><td>M7</td><td>Research Reports &mdash; Listing &amp; HTML5 Detail (TOC / AI / audio / Trigger-to-Connect / Focus)</td><td>Phase 1B&ndash;1C</td><td class="right">~ 8.5 weeks</td><td>The heart of the platform</td></tr>
+    <tr><td>M8</td><td><strong>Events Module (NEW)</strong> &mdash; conferences, RSVP, dashboard widget</td><td>Phase 2B</td><td class="right">~ 2 weeks</td><td>Email notifications</td></tr>
+    <tr><td>M9</td><td>HWAK Analytics (rebuilt on new stack)</td><td>Phase 2A</td><td class="right">~ 4.5 weeks</td><td>Cross-filter charts</td></tr>
+    <tr><td>M10</td><td><strong>ESG / Corporate Governance (NEW)</strong> &mdash; scoring, heatmaps, comparatives</td><td>Phase 2A</td><td class="right">~ 4.5 weeks</td><td>Awaits scoring spec</td></tr>
+    <tr><td>M11</td><td>Data Analytics Dashboards (Valuation, MF Tracker, NSE500 Reckoner)</td><td>Phase 2A</td><td class="right">~ 3.5 weeks</td><td>Column chooser + Excel export</td></tr>
+    <tr><td>M12</td><td><strong>Publishing Authors (NEW)</strong> &mdash; cards, profile, Q&amp;A, 1:1 booking (Calendly)</td><td>Phase 2B</td><td class="right">~ 3.5 weeks</td><td>Q&amp;A moderation + booking integration</td></tr>
+    <tr><td>M13</td><td><strong>Corporate Access &amp; Bespoke Work (NEW)</strong> &mdash; static + Experts + Podcasts + Bespoke form</td><td>Phase 2B</td><td class="right">~ 2 weeks</td><td>CRUD + media embed</td></tr>
+    <tr><td>M14</td><td>Editorial CMS &amp; Workflow (queue / checkout-lock / TipTap WYSIWYG / HWAK upload)</td><td>Phase 1B</td><td class="right">~ 6.5 weeks</td><td>Largest editorial module</td></tr>
+    <tr><td>M15</td><td>Admin Modules (User / RBAC, Sector / Company / Event mgmt, NSE&harr;BBG mapping, logs, analytics)</td><td>Phase 1D + 2B</td><td class="right">~ 7 weeks</td><td>Consolidated admin surface</td></tr>
+    <tr><td>M16</td><td>Mobile App &mdash; A-ONE Research (RN + Expo, full app w/ offline + biometric)</td><td>Phase 1D (start)<br>through Phase 2</td><td class="right">~ 6 months</td><td>iOS + Android + offline + push (parallel workstream)</td></tr>
+    <tr><td>M17</td><td>Integration Layer + SEBI Compliance Engine (Trigger + 3 fetch APIs + AI / Audio / HTML workers + audit + Object Lock)</td><td>Phase 1B</td><td class="right">~ 8.5 weeks</td><td>SQS + retry / DLQ + WORM archive</td></tr>
+    <tr><td>M18</td><td>Cross-cutting (Search, Notifications, Performance, A11y)</td><td>Phase 1B&ndash;1E</td><td class="right">~ 3.5 weeks</td><td>OpenSearch + WCAG AA</td></tr>
   </tbody>
-  <tfoot>
-    <tr style="background:#f1f5f9;font-weight:700">
-      <td colspan="2" class="right">Functional modules subtotal</td>
-      <td class="right">282</td>
-      <td class="right">426</td>
-      <td class="right"><strong>708</strong></td>
-      <td class="right"><strong>468</strong></td>
-      <td>person-days / wall-clock days</td>
-    </tr>
-  </tfoot>
 </table>
-<p class="legend">Sum of <em>wall-clock days</em> (468) is the timeline for one BE+FE pair doing all 18 modules sequentially. With 2 parallel BE+FE tracks plus a dedicated RN engineer for M16, the dev phase compresses to ~190 working days &mdash; see 8.3 below.</p>
+<p class="legend">Durations are approximate wall-clock estimates for the active build of each module, assuming a Backend and a Frontend engineer work on it concurrently. Modules within the same phase run on parallel tracks &mdash; see Section 7 for the actual phase calendar.</p>
 
 <h3>8.2 Cross-Cutting Engineering Workstreams</h3>
+<p>The following workstreams run <strong>continuously alongside</strong> functional development &mdash; not as separate phases. They are owned by the dedicated DevOps, QA, Tech Lead and PM roles and are factored into the overall 11-month timeline.</p>
 <table>
   <thead>
-    <tr><th style="width:8%">#</th><th style="width:60%">Workstream</th><th class="right" style="width:15%">Days</th></tr>
+    <tr><th style="width:8%">#</th><th style="width:42%">Workstream</th><th>Cadence</th></tr>
   </thead>
   <tbody>
-    <tr><td>C1</td><td>CI/CD pipelines (Backend + Frontend + RN, Fastlane / EAS builds)</td><td class="right">22</td></tr>
-    <tr><td>C2</td><td>Infrastructure as Code (Terraform &mdash; dev / staging / prod on AWS)</td><td class="right">24</td></tr>
-    <tr><td>C3</td><td>Database schema, migrations &amp; seed scripts</td><td class="right">14</td></tr>
-    <tr><td>C4</td><td>End-to-end test automation (Playwright web + Detox mobile)</td><td class="right">30</td></tr>
-    <tr><td>C5</td><td>Performance &amp; load testing (3&times; peak target)</td><td class="right">14</td></tr>
-    <tr><td>C6</td><td>Security hardening + OWASP review + SAST/DAST/SCA + external pen-test remediation</td><td class="right">22</td></tr>
-    <tr><td>C7</td><td>Observability (CloudWatch dashboards + Sentry + structured logs + SLO alerting)</td><td class="right">12</td></tr>
-    <tr><td>C8</td><td>Documentation &amp; handover (Runbook, OpenAPI spec, Admin guide, SBOM)</td><td class="right">14</td></tr>
-    <tr><td>C9</td><td>UAT support + bug-fix &amp; stabilisation reserve</td><td class="right">36</td></tr>
+    <tr><td>C1</td><td>CI/CD pipelines (Backend + Frontend + RN, Fastlane / EAS builds)</td><td>Set up Phase 0; maintained throughout</td></tr>
+    <tr><td>C2</td><td>Infrastructure as Code (Terraform &mdash; dev / staging / prod on AWS)</td><td>Set up Phase 0&ndash;1A; maintained throughout</td></tr>
+    <tr><td>C3</td><td>Database schema, migrations &amp; seed scripts</td><td>Per-module, throughout build</td></tr>
+    <tr><td>C4</td><td>End-to-end test automation (Playwright web + Detox mobile)</td><td>Continuous; locks before each phase exit</td></tr>
+    <tr><td>C5</td><td>Performance &amp; load testing (3&times; peak target)</td><td>Phase 1E and Phase 2C</td></tr>
+    <tr><td>C6</td><td>Security hardening + OWASP review + SAST / DAST / SCA + external pen-test</td><td>Continuous in CI; pen-test in Phase 1E and Phase 2C</td></tr>
+    <tr><td>C7</td><td>Observability (CloudWatch dashboards + Sentry + structured logs + SLO alerting)</td><td>Stood up in Phase 1A; iterated throughout</td></tr>
+    <tr><td>C8</td><td>Documentation &amp; handover (Runbook, OpenAPI spec, Admin guide, SBOM)</td><td>Maintained per module; finalised at each phase exit</td></tr>
+    <tr><td>C9</td><td>UAT support + bug-fix &amp; stabilisation</td><td>Phase 1E and Phase 2C</td></tr>
   </tbody>
-  <tfoot>
-    <tr style="background:#f1f5f9;font-weight:700">
-      <td colspan="2" class="right">Cross-cutting subtotal</td>
-      <td class="right"><strong>188</strong></td>
-    </tr>
-  </tfoot>
 </table>
 
-<h3>8.3 Effort Roll-Up &mdash; Total Cost Basis</h3>
-<p>This is the total <strong>billable effort</strong> &mdash; the sum of every person-day spent on the project, regardless of who does it in parallel.</p>
-<table>
-  <thead>
-    <tr><th style="width:60%">Bucket</th><th class="right">Person-Days</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Functional Modules (M1&ndash;M18) &mdash; BE + FE summed</td><td class="right">708</td></tr>
-    <tr><td>Cross-Cutting Engineering (C1&ndash;C9)</td><td class="right">188</td></tr>
-    <tr><td>Project Management &amp; client communication (~10%)</td><td class="right">90</td></tr>
-    <tr><td>Sub-total</td><td class="right">986</td></tr>
-    <tr><td>Recommended buffer / contingency (~11% &mdash; integration drift, design churn, vendor HTML edge cases, ESG spec churn)</td><td class="right">+ 112</td></tr>
-  </tbody>
-  <tfoot>
-    <tr style="background:#1e40af;color:#fff;font-weight:700">
-      <td class="right">Total Project Effort</td>
-      <td class="right">~ 1,098 person-days &nbsp; (~ 8,784 hours)</td>
-    </tr>
-  </tfoot>
-</table>
-
-<h3>8.4 Parallelized Timeline &mdash; How 1,098 Person-Days Becomes ~11 Calendar Months</h3>
-<p>The 5.8&#8209;FTE team works <strong>concurrently</strong> on multiple tracks. Backend, Frontend, Mobile, DevOps and QA do not stand in line &mdash; they execute in parallel from day one. Here is how the wall-clock math works out.</p>
-<table>
-  <thead>
-    <tr>
-      <th style="width:32%">Track</th>
-      <th>Who runs it</th>
-      <th class="right" style="width:13%">Days of work</th>
-      <th class="right" style="width:13%">Parallel tracks</th>
-      <th class="right" style="width:14%">Wall-clock (working days)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Web modules</strong> (M1&ndash;M15, M17, M18 &mdash; excluding M16)</td>
-      <td>2 Senior BE + 2 Senior FE engineers paired into 2 BE+FE tracks</td>
-      <td class="right">378</td>
-      <td class="right">2</td>
-      <td class="right"><strong>~ 189</strong></td>
-    </tr>
-    <tr>
-      <td><strong>Mobile App</strong> (M16)</td>
-      <td>1 React Native engineer + 10 days BE support (absorbed by Web BE)</td>
-      <td class="right">90</td>
-      <td class="right">1</td>
-      <td class="right"><strong>~ 90</strong> (overlaps Web)</td>
-    </tr>
-    <tr>
-      <td><strong>Cross-cutting</strong> (C1&ndash;C9: CI/CD, IaC, DB, E2E, perf, security, observability, docs, UAT)</td>
-      <td>Tech Lead + DevOps (30%) + QA (50%), running alongside dev</td>
-      <td class="right">188</td>
-      <td class="right">parallel to dev</td>
-      <td class="right"><strong>absorbed</strong></td>
-    </tr>
-    <tr>
-      <td><strong>PM &amp; client communication</strong></td>
-      <td>Project Manager (30%)</td>
-      <td class="right">90</td>
-      <td class="right">parallel to all</td>
-      <td class="right"><strong>absorbed</strong></td>
-    </tr>
-    <tr>
-      <td><strong>Buffer / contingency</strong></td>
-      <td>Reserved across team</td>
-      <td class="right">112</td>
-      <td class="right">&mdash;</td>
-      <td class="right"><strong>~ 25</strong></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr style="background:#f1f5f9;font-weight:700">
-      <td colspan="4" class="right">Critical-path wall-clock (web track + buffer)</td>
-      <td class="right"><strong>~ 214 working days</strong></td>
-    </tr>
-    <tr style="background:#1e40af;color:#fff;font-weight:700">
-      <td colspan="4" class="right">Calendar duration (~22 working days / month)</td>
-      <td class="right"><strong>~ 11 calendar months</strong></td>
-    </tr>
-  </tfoot>
-</table>
-
-<p class="legend"><strong>Sanity check:</strong> 5.8 FTE &times; 22 working days/month &times; 11 months = <strong>~ 1,404 available person-days</strong>. We are committing <strong>1,098 person-days</strong> of productive work &mdash; the ~22% headroom covers public holidays, leave, ramp-up, sprint ceremonies and stakeholder reviews. The plan is achievable without burnout.</p>
-
+<h3>8.3 Project Snapshot</h3>
 <div class="kpi-row">
-  <div class="kpi"><span class="kpi-num">~1,098</span><span class="kpi-label">Person-Days (Effort)</span></div>
-  <div class="kpi"><span class="kpi-num">~214</span><span class="kpi-label">Wall-Clock Days</span></div>
+  <div class="kpi"><span class="kpi-num">18</span><span class="kpi-label">Functional Modules</span></div>
+  <div class="kpi"><span class="kpi-num">2</span><span class="kpi-label">Delivery Phases</span></div>
   <div class="kpi"><span class="kpi-num">~11</span><span class="kpi-label">Calendar Months</span></div>
-  <div class="kpi"><span class="kpi-num">5.8</span><span class="kpi-label">FTE Core Team</span></div>
+  <div class="kpi"><span class="kpi-num">8</span><span class="kpi-label">Specialist Roles</span></div>
 </div>
 
-<h3>8.5 Recommended Team</h3>
+<h3>8.4 Engagement Team</h3>
+<p>Roles assigned to the engagement. The team works in parallel across multiple tracks (web backend, web frontend, mobile, integration, DevOps, QA) so that all 18 modules can progress concurrently within the timeline above.</p>
 <table>
   <thead>
-    <tr><th>Role</th><th>Allocation</th><th>Responsibility</th></tr>
+    <tr><th style="width:30%">Role</th><th style="width:25%">Engagement window</th><th>Responsibility</th></tr>
   </thead>
   <tbody>
-    <tr><td>Tech Lead / Architect</td><td>100% / 11 mo</td><td>Architecture, code review, integration design, AI &amp; rendering pipelines, SEBI compliance design</td></tr>
-    <tr><td>Senior Backend Engineer (&times;2)</td><td>100% / 11 mo</td><td>APIs, integrations, DB, AI orchestration, admin services, audit ledger</td></tr>
-    <tr><td>Senior Frontend Engineer (&times;2)</td><td>100% / 11 mo</td><td>Web app, dashboards, reader experience, charts, ESG/HWAK UI</td></tr>
-    <tr><td>React Native Engineer</td><td>100% / 6 mo</td><td>Mobile app end-to-end &mdash; A-ONE Research (joins month 2)</td></tr>
-    <tr><td>QA / Test Automation</td><td>50% / 9 mo</td><td>E2E suite (Playwright + Detox), regression, performance, SEBI audit-trail tests</td></tr>
-    <tr><td>DevOps / SRE</td><td>30% / 11 mo</td><td>IaC, CI/CD, environments, observability, security, S3 Object Lock setup</td></tr>
-    <tr><td>UI/UX Designer</td><td>50% / 4 mo</td><td>Figma updates, design system, micro-interactions, A-ONE Research mobile branding</td></tr>
-    <tr><td>Project Manager</td><td>30% / 11 mo</td><td>Sprint planning, client communication, status reporting, CR governance</td></tr>
+    <tr><td>Tech Lead / Architect</td><td>Full project</td><td>Architecture, code review, integration design, AI &amp; rendering pipelines, SEBI compliance design</td></tr>
+    <tr><td>Senior Backend Engineer (&times; 2)</td><td>Full project</td><td>APIs, integrations, DB, AI orchestration, admin services, audit ledger</td></tr>
+    <tr><td>Senior Frontend Engineer (&times; 2)</td><td>Full project</td><td>Web app, dashboards, reader experience, charts, ESG / HWAK UI</td></tr>
+    <tr><td>React Native Engineer</td><td>From Month 2 &mdash; mobile workstream end-to-end</td><td>Mobile app end-to-end &mdash; A-ONE Research by IE Research</td></tr>
+    <tr><td>QA / Test Automation</td><td>Continuous from Month 3</td><td>E2E suite (Playwright + Detox), regression, performance, SEBI audit-trail tests</td></tr>
+    <tr><td>DevOps / SRE</td><td>Full project (continuous)</td><td>IaC, CI/CD, environments, observability, security, S3 Object Lock setup</td></tr>
+    <tr><td>UI/UX Designer</td><td>Phase 1A&ndash;1D</td><td>Figma updates, design system, micro-interactions, A-ONE Research mobile branding</td></tr>
+    <tr><td>Project Manager</td><td>Full project</td><td>Sprint planning, client communication, status reporting, change-request governance</td></tr>
   </tbody>
 </table>
 
@@ -1724,7 +1615,7 @@
     </tr>
     <tr>
       <td><strong>Scope creep mid-project</strong></td>
-      <td>Schedule slip, budget pressure</td>
+      <td>Schedule slip; scope drift</td>
       <td>Formal Change Request process &mdash; written sign-off before work starts; T&amp;M billing for additions</td>
     </tr>
     <tr>
@@ -1787,7 +1678,7 @@
 <div class="callout">
 <p>Ambit Capital is one of India&rsquo;s most respected institutional research houses, and the new Research Portal is an opportunity to give your clients a reading and analytics experience worthy of that brand.</p>
 <p>This SOW is grounded in the BRD authored by Suraj Menon, the discovery call held on 17 April 2026, the Figma designs already circulated, and a live audit of the existing portal. It scopes <strong>18 modules</strong> &mdash; including <strong>4 brand-new modules</strong> (ESG / Corporate Governance, Publishing Authors, Corporate Access, Bespoke Work) and a full rebuild of HWAK Analytics &mdash; covering <strong>270+ stocks across 47 sectors</strong> with a SEBI-compliant infrastructure from day one.</p>
-<p>It commits to a phased, demoable delivery &mdash; so Ambit sees value early, every milestone is concretely measurable, and risk stays low through every step of the build. Core team of <strong>5.8 FTE</strong>, total effort <strong>~1,098 person-days (~8,784 hours) over ~11 calendar months</strong>, including a 6-month mobile-app workstream that delivers the <strong>A-ONE Research by IE Research</strong> app on iOS and Android.</p>
+<p>It commits to a phased, demoable delivery &mdash; so Ambit sees value early, every milestone is concretely measurable, and risk stays low through every step of the build. Delivered over <strong>~11 calendar months</strong> across two phases, with a parallel <strong>6-month mobile-app workstream</strong> shipping the <strong>A-ONE Research by IE Research</strong> app on iOS and Android.</p>
 <p>Our team brings the technical depth needed for the hard parts (Word &rarr; HTML rendering, real-time integration with the Publication System, AI summary orchestration, mobile-first reading experience, SEBI compliance engine) and the discipline to ship cleanly to production. We treat compliance, security and observability as first-class &mdash; not afterthoughts.</p>
 <p>This estimate has been independently challenged by our internal product, analyst, architect and developer reviewers and adjusted for realism. We&rsquo;re ready to start the moment you give the go-ahead. Looking forward to building this with you.</p>
 </div>
