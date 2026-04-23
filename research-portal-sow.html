@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Statement of Work – Ambit Research Portal</title>
+<style>
+  @page { margin: 22mm 18mm 22mm 18mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+  }
+  h1, h2, h3, h4 { color: #0f172a; margin-top: 0; }
+  h1 { font-size: 26pt; letter-spacing: -0.5px; }
+  h2 {
+    font-size: 16pt;
+    border-bottom: 2px solid #1e40af;
+    padding-bottom: 6px;
+    margin-top: 28px;
+    margin-bottom: 14px;
+  }
+  h3 { font-size: 12.5pt; color: #1e3a8a; margin-top: 18px; margin-bottom: 6px; }
+  h4 { font-size: 11pt; color: #334155; margin-top: 14px; margin-bottom: 4px; }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0 10px 22px; padding: 0; }
+  li { margin-bottom: 3px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px 0;
+    font-size: 9.8pt;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 7px 9px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #1e40af;
+    color: #fff;
+    font-weight: 600;
+    font-size: 9.8pt;
+  }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .right { text-align: right; }
+  .center { text-align: center; }
+  .muted { color: #64748b; }
+  .pill {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 600;
+  }
+  .pill-warn { background: #fef3c7; color: #92400e; }
+  .pill-good { background: #dcfce7; color: #166534; }
+  .pill-info { background: #ede9fe; color: #5b21b6; }
+  .callout {
+    background: #eff6ff;
+    border-left: 4px solid #1e40af;
+    padding: 10px 14px;
+    margin: 12px 0;
+    border-radius: 4px;
+  }
+  .callout-warn { background: #fffbeb; border-left-color: #f59e0b; }
+  .callout-good { background: #f0fdf4; border-left-color: #22c55e; }
+  .grid-2 {
+    display: table;
+    width: 100%;
+    margin: 8px 0;
+  }
+  .grid-2 .col { display: table-cell; width: 50%; padding: 6px 12px; vertical-align: top; }
+  .cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 80px;
+  }
+  .cover .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 10pt;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+  }
+  .cover h1 {
+    font-size: 32pt;
+    line-height: 1.15;
+    margin: 0 0 14px 0;
+    color: #1e3a8a;
+  }
+  .cover .subtitle {
+    font-size: 13pt;
+    color: #475569;
+    margin-bottom: 50px;
+    font-weight: 500;
+  }
+  .cover .client-row {
+    display: inline-block;
+    background: #f1f5f9;
+    padding: 18px 36px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid #e2e8f0;
+    font-size: 13pt;
+  }
+  .cover .meta {
+    display: inline-block;
+    background: #fff;
+    padding: 22px 40px;
+    border-radius: 12px;
+    text-align: left;
+    margin: 20px auto;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .cover .meta div { margin: 5px 0; font-size: 10.5pt; }
+  .cover .meta strong { color: #0f172a; min-width: 150px; display: inline-block; }
+  .cover .footer-note {
+    margin-top: 60px;
+    color: #64748b;
+    font-size: 9.5pt;
+    font-style: italic;
+  }
+  .toc { padding: 18px 24px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+  .toc ol { margin: 8px 0 0 22px; }
+  .toc li { padding: 3px 0; font-size: 10.5pt; }
+  .summary-card {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    color: #fff;
+    padding: 18px 24px;
+    border-radius: 10px;
+    margin: 14px 0;
+  }
+  .summary-card h3 { color: #fff; margin: 0 0 8px 0; }
+  .summary-card p { margin: 4px 0; }
+  .kpi-row { display: table; width: 100%; margin: 14px 0; }
+  .kpi {
+    display: table-cell;
+    width: 25%;
+    padding: 14px;
+    text-align: center;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+  }
+  .kpi-num { font-size: 18pt; font-weight: 700; color: #1e40af; display: block; }
+  .kpi-label { font-size: 9pt; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+  .module-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+  .module-head {
+    display: table;
+    width: 100%;
+    margin-bottom: 6px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 6px;
+  }
+  .module-head .name {
+    display: table-cell;
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 11pt;
+  }
+  .module-head .hours {
+    display: table-cell;
+    text-align: right;
+    font-weight: 600;
+    color: #1e40af;
+    font-size: 9.5pt;
+  }
+  .signature {
+    margin-top: 40px;
+    page-break-inside: avoid;
+  }
+  .sig-row { display: table; width: 100%; margin-top: 30px; }
+  .sig-block { display: table-cell; width: 48%; padding: 0 10px; vertical-align: top; }
+  .sig-line { border-bottom: 1px solid #94a3b8; margin-bottom: 6px; height: 40px; }
+  .small { font-size: 9pt; color: #64748b; }
+  .legend { font-size: 9pt; color: #64748b; margin-top: 4px; font-style: italic; }
+  hr { border: 0; border-top: 1px solid #e2e8f0; margin: 16px 0; }
+  .page-break { page-break-before: always; }
+  .flow-step {
+    background: #f8fafc;
+    border-left: 3px solid #1e40af;
+    padding: 8px 14px;
+    margin: 6px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .flow-step strong { color: #1e3a8a; }
+  .arch-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 8px 0;
+  }
+  .arch-box pre {
+    font-family: "Courier New", monospace;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+    color: #1e293b;
+  }
+  .tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    margin: 2px 3px 2px 0;
+    border: 1px solid #e2e8f0;
+  }
+  .phase-banner {
+    background: linear-gradient(90deg, #1e40af, #3b82f6);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin: 12px 0 8px 0;
+    font-weight: 600;
+    font-size: 11pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER PAGE ==================== -->
+<div class="cover">
+  <div class="badge">STATEMENT OF WORK</div>
+  <h1>Ambit Research Portal<br>Revamp &amp; Mobile App</h1>
+  <div class="subtitle">A New, AI-Augmented Research &amp; Analytics Platform for Institutional Clients</div>
+
+  <div class="client-row">
+    <strong>Prepared for:</strong> &nbsp; Ambit Capital — Institutional Equities
+  </div>
+
+  <div class="meta">
+    <div><strong>Client SPOC:</strong> Suraj Menon</div>
+    <div><strong>Document Author:</strong> Innodeed</div>
+    <div><strong>Date Issued:</strong> 23 April 2026</div>
+    <div><strong>Reference Inputs:</strong> BRD v1.0 (06 Aug 2025) &middot; Discovery Call (17 Apr 2026) &middot; Figma UI &middot; Live Portal Audit</div>
+  </div>
+
+  <div class="footer-note">
+    Confidential &mdash; Intended solely for the named recipient. &nbsp;|&nbsp; Innodeed Technology Solutions &nbsp;|&nbsp; Not for circulation.
+  </div>
+</div>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<div>
+  <h2>Table of Contents</h2>
+  <div class="toc">
+    <ol>
+      <li>Project Overview</li>
+      <li>Scope of Work</li>
+      <li>Functional Flow</li>
+      <li>Technical Approach (High Level)</li>
+      <li>Assumptions</li>
+      <li>Out of Scope</li>
+      <li>Timeline Estimate</li>
+      <li>Effort Estimation</li>
+      <li>Deliverables</li>
+      <li>Risks &amp; Dependencies</li>
+      <li>Project Success Metrics</li>
+      <li>Conclusion</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ==================== 1. PROJECT OVERVIEW ==================== -->
+<div class="page-break"></div>
+<h2>1. Project Overview</h2>
+
+<h3>1.1 What We Are Building</h3>
+<p>Ambit Capital&rsquo;s existing Research Portal (<code>ambitresearch.co</code>) will be <strong>retired and replaced</strong> with a brand-new, modern Research &amp; Analytics Platform &mdash; built ground-up for institutional clients (mutual funds, AIFs, pension funds, family offices) who consume Ambit&rsquo;s equity research on <strong>270+ stocks across 47 sectors</strong>.</p>
+
+<p>The new platform will deliver:</p>
+<ul>
+  <li>A clean, modern <strong>web portal</strong> (React, desktop-first, fully responsive)</li>
+  <li>A native-like <strong>mobile app</strong> for iOS and Android (React Native) &mdash; branded as <strong>A-ONE Research by IE Research</strong></li>
+  <li>A robust <strong>editorial CMS</strong> to publish, edit, version and approve research reports</li>
+  <li>An integrated <strong>AI Summary &amp; Audio</strong> capability &mdash; pre-generated at publish time, analyst-replaceable</li>
+  <li>A full <strong>HTML5 report reading experience</strong> &mdash; TOC, Focus Mode, Resume Reading, Trigger to Connect, Tags &amp; Tag Cloud</li>
+  <li><strong>Four brand-new modules</strong>: ESG / Corporate Governance analytics, Publishing Authors, Corporate Access, and Bespoke Work</li>
+  <li><strong>SEBI-compliant infrastructure</strong> &mdash; immutable report archive, dynamic analyst disclosures, 5-year retention, full audit trail</li>
+</ul>
+
+<h3>1.2 Business Goals</h3>
+<ul>
+  <li><strong>Modernise client experience</strong> &mdash; the current portal&rsquo;s UI is outdated (jQuery / server-rendered, no mobile); the revamp positions Ambit as a premier institutional research brand.</li>
+  <li><strong>Deeper engagement &amp; readership tracking</strong> &mdash; HTML reports enable read time, scroll depth, and interaction tracking (PDF cannot).</li>
+  <li><strong>Drive analyst &harr; client connect</strong> &mdash; in-flow nudges (&ldquo;Talk to the Analyst&rdquo;) convert reading into conversations, lifting brokerage revenue.</li>
+  <li><strong>Mobile-first reach</strong> &mdash; meet portfolio managers where they read; full iOS + Android app.</li>
+  <li><strong>Operational efficiency</strong> &mdash; modern editorial workflow with checkout-locking removes bottlenecks in report production.</li>
+  <li><strong>Compliance by design</strong> &mdash; SEBI Research Analyst Regulations 2014 compliant from day one.</li>
+</ul>
+
+<h3>1.3 Target Users</h3>
+<table>
+  <thead>
+    <tr><th style="width:25%">Role</th><th>Who they are</th><th>What they do</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>External Client (Reader)</strong></td>
+      <td>Buy-side professionals at MFs, AIFs, pension funds, family offices, asset managers</td>
+      <td>Browse research, read reports, follow analysts &amp; sectors, engage with authors</td>
+    </tr>
+    <tr>
+      <td><strong>Analyst / Author</strong></td>
+      <td>Ambit research analysts who author reports</td>
+      <td>Public-facing profile; receives client questions &amp; 1:1 requests; manages AI summary replacements</td>
+    </tr>
+    <tr>
+      <td><strong>Editor</strong></td>
+      <td>Production / editorial team</td>
+      <td>Reviews, edits and approves reports through workflow; manages charts and disclosures</td>
+    </tr>
+    <tr>
+      <td><strong>Admin</strong></td>
+      <td>Ambit IT / operations</td>
+      <td>Manages users, tokens, sectors, companies, events, integrations, logs, analytics</td>
+    </tr>
+    <tr>
+      <td><strong>Sales / Account Manager</strong></td>
+      <td>Ambit IE Sales Desk</td>
+      <td>Approves access requests, monitors readership analytics for their accounts</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ==================== 2. SCOPE OF WORK ==================== -->
+<h2>2. Scope of Work</h2>
+
+<h3>2.1 User Roles &amp; Access</h3>
+<ul>
+  <li><strong>Admin</strong> &mdash; full access to all configuration, user management, content workflows, logs and analytics.</li>
+  <li><strong>Editor / Production</strong> &mdash; access to the editorial CMS (review queue, WYSIWYG editor, publish, edit published).</li>
+  <li><strong>Analyst (Author)</strong> &mdash; manages their own author profile; can replace AI-generated summaries; receives client Q&amp;A and 1:1 requests.</li>
+  <li><strong>External Client (End-User)</strong> &mdash; reads research, manages preferences, follows analysts, uses analytics, requests connects.</li>
+  <li><strong>Sales</strong> &mdash; approves access requests, views readership analytics for their accounts.</li>
+</ul>
+<p class="legend">Access is enforced through Role-Based Access Control (RBAC) configurable from the Admin module.</p>
+
+<h3>2.2 Core Modules (18 Modules)</h3>
+<p class="legend">Modules listed in build order. All modules are in scope for Phase 1 unless explicitly tagged Phase 2.</p>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M1. Authentication &amp; Access</span><span class="hours">Passwordless &middot; Multi-Device &middot; OTP Fallback</span></div>
+  <ul>
+    <li>Passwordless login via cache-token (FingerprintJS-based device fingerprint), supported on up to 3 trusted devices.</li>
+    <li>Token expiry &rarr; auto-fallback to email OTP, then re-issue token (60-day validity).</li>
+    <li>Friendly, branded labels (e.g. &ldquo;Login Securely but Password Free!&rdquo;).</li>
+    <li><strong>Request Access</strong> form with OTP &amp; CAPTCHA validation; routed to Admin approval queue.</li>
+    <li>Cookie consent &amp; data privacy preferences flyer (LHS bottom) &mdash; granular Allow All / Reject All / Customise.</li>
+    <li>Active session list with remote sign-out per device.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M2. Disclosures &amp; Terms (SEBI)</span><span class="hours">Dynamic &middot; Word-Template-Driven &middot; Compliance-Critical</span></div>
+  <ul>
+    <li>Static T&amp;C page; <strong>dynamic Disclosure</strong> page driven by an admin-managed Word template.</li>
+    <li>Multi-select coverage tickers &rarr; live price chart rendering for selected tickers.</li>
+    <li><strong>SEBI Research Analyst Regulations 2014 compliant</strong> rendering of analyst disclosure footers per ticker.</li>
+    <li>Disclosure version history maintained for audit (immutable, append-only).</li>
+    <li>Per-report disclosure injection at publish-time &mdash; baked into the immutable archived copy.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M3. Dashboard (Landing Page)</span><span class="hours">Recent Research &middot; Search &middot; Tags &middot; Events</span></div>
+  <ul>
+    <li><strong>Recent Research</strong> feed sorted by publication time; default = preference-filtered; &ldquo;Show All&rdquo; toggle.</li>
+    <li>Sort: Newest&harr;Oldest, Best Upside, Target Achieved.</li>
+    <li>Filter slider with metadata-driven options.</li>
+    <li>Tags &amp; <strong>Tag Cloud</strong> for advanced filtering.</li>
+    <li>Search flyer (company / industry / analyst / keyword) with categorised results.</li>
+    <li><strong>Upcoming Events</strong> section (visible only when active); event detail page with corporate participants &amp; interest expression.</li>
+    <li><strong>Help / Product Tour</strong> overlay for first-time users.</li>
+    <li><strong>Key Reports</strong> shelf: Top 5 Initiations, Thematics, Top Ideas, Flagship Portfolios.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M4. User Profile &amp; Preferences</span><span class="hours">Avatar &middot; Credentials &middot; Bookmarks &middot; Following</span></div>
+  <ul>
+    <li>Profile photo / avatar, contact details, address.</li>
+    <li>Credential management (token reset, device de-registration).</li>
+    <li><strong>Manage Preferences</strong>: select preferred sectors, stocks, analysts.</li>
+    <li>Bookmarks &amp; Read-Later list; auto-housekeep after 30 days (mobile).</li>
+    <li>Followers / Following list of analysts &amp; sectors.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M5. Coverage &mdash; View by Sector</span><span class="hours">Treemap &middot; 47 Sectors &middot; Interactive Charts</span></div>
+  <ul>
+    <li>Hierarchical / Tree-map view of <strong>47 sectors</strong> with stock counts and buy/sell colour coding.</li>
+    <li><strong>Sector page</strong>: Recent Research, Companies table, Ratings &amp; Relative Valuation tables, Performance Trends, Industry Bubble chart.</li>
+    <li>Interactive XY chart &mdash; user picks X &amp; Y axes from defined data items.</li>
+    <li>Stock names hyperlink to Company pages.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M6. Coverage &mdash; View by Stock</span><span class="hours">270+ Stocks &middot; Financials &middot; HWAK Score</span></div>
+  <ul>
+    <li>Tabular stock list (<strong>270+ stocks under coverage</strong>) with on-screen filters (focus mode).</li>
+    <li><strong>Company page</strong>: Recent research, interactive price chart &amp; stock heatmap (period selector).</li>
+    <li>Static, HWAK and Financial Model data &mdash; categorised (P&amp;L, Balance Sheet, Cash Flow, Ratios &amp; Valuation).</li>
+    <li><strong>Excel export</strong> of model values &middot; &ldquo;Request comprehensive model&rdquo; option.</li>
+    <li>Quarterly results &middot; Interactive Key Metrics &amp; Ratios charts.</li>
+    <li>Company details, Shareholding, Peer Comparison with HWAK score.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M7. Research Reports &mdash; Listing &amp; Detail (HTML5)</span><span class="hours">The Heart of the Platform</span></div>
+  <ul>
+    <li><strong>9 report types</strong>: Company, Sectorial, Economy, Strategy Research, Analyst Notes, Research Blogs, 10 Interesting Things, Fortnightly Channel Checks, Beachcombing.</li>
+    <li>Listing with collapsed cards (3&ndash;4 line preview + Read More) &middot; Sort &middot; Filter by Rating, Period &middot; Tags &amp; Tag Cloud.</li>
+    <li><strong>Full HTML5 report view</strong> &mdash; faithful rendering of 60-70 page Word/PDF reports with collapsible TOC on LHS, model download, last-updated date, &ldquo;Also Read&rdquo; suggestions.</li>
+    <li><strong>Header icons</strong>: Report type, Rating + TP + Upside%, Copy Short-Link (e.g. <code>ambitresearch.co/s/R1ygk</code>), AI Summary slider with audio playback, Time-to-Read estimate.</li>
+    <li><strong>Footer icons</strong>: Author name &amp; contact (email/phone), Like / Dislike / Comment, Date-Time stamp.</li>
+    <li><strong>Trigger-to-Connect</strong>: half-scroll prompt &mdash; &ldquo;Would you like to connect with our Analyst?&rdquo; &mdash; opens Calendly-style analyst availability.</li>
+    <li><strong>Focus Mode</strong> toggle &mdash; suppresses notifications and chrome while reading.</li>
+    <li>Bookmark / Resume Reading position &middot; Dynamic TOC &middot; Breadcrumb with % progress.</li>
+    <li>Tags &amp; Tag Cloud for advanced discovery; click-tag to filter the listing view.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M8. Events Module <em style="color:#dc2626;">(NEW)</em></span><span class="hours">Conferences &middot; Calendar &middot; RSVP</span></div>
+  <ul>
+    <li><strong>Events listing</strong> &mdash; conferences, corporate days, analyst meets, webinars.</li>
+    <li><strong>Event detail page</strong> &mdash; agenda, corporate participants, expression-of-interest CTA.</li>
+    <li>Dashboard widget (visible only when active events exist).</li>
+    <li>Admin can create / edit / archive events; participation tracking.</li>
+    <li>Email notifications to interested clients on registration / changes.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M9. HWAK Analytics</span><span class="hours">Features unchanged &middot; Rebuilt on new stack</span></div>
+  <ul>
+    <li><strong>Per BRD: features unchanged from current portal.</strong> The module is rebuilt on the new React stack to match the rest of the platform&rsquo;s look-and-feel and performance.</li>
+    <li>Interactive charts with drill-down on each data series and element.</li>
+    <li>Forensic Deciles, Greatness Score Distribution, Sector Heatmap, Stock Analysis screens.</li>
+    <li>Forensic Decile vs Greatness Score scatter chart with quadrant analysis.</li>
+    <li>Per-stock detail navigation from heatmap; deep-link to Company page.</li>
+    <li>Periodic data refresh from HWAK source files (weekly + consolidated Excel templates).</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M10. ESG / Corporate Governance <em style="color:#dc2626;">(NEW)</em></span><span class="hours">Sustainability Scores &middot; Governance Heatmaps</span></div>
+  <ul>
+    <li>Sector and stock-level ESG scoring with breakdowns (Environmental, Social, Governance).</li>
+    <li>Corporate Governance scorecards and red-flag indicators.</li>
+    <li>Comparative views &mdash; ESG vs HWAK, ESG vs Greatness Score.</li>
+    <li>Drill-downs to underlying data points and source attribution.</li>
+    <li>Configurable from Admin (data refresh, scoring weights).</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M11. Data Analytics Dashboards</span><span class="hours">Valuation &middot; MF Tracker &middot; NSE500</span></div>
+  <ul>
+    <li><strong>Ambit Valuation Summary</strong> &mdash; HTML grid (replacing Excel) with column chooser, sort, filter, export.</li>
+    <li><strong>Ambit MF Tracker</strong> &mdash; add stocks dynamically with filters; track MF holdings movements.</li>
+    <li><strong>Ambit NSE500 Result Reckoner</strong> &mdash; HTML-based with horizontal scroll + Excel export.</li>
+    <li>Each dashboard is data-driven from Admin upload UI; refreshable on demand.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M12. Publishing Authors <em style="color:#dc2626;">(NEW)</em></span><span class="hours">Profiles &middot; Follow &middot; Q&amp;A &middot; 1:1 Booking</span></div>
+  <ul>
+    <li><strong>Author cards</strong> grid with name, photo, designation, sectors covered.</li>
+    <li>Sort &amp; search by name / role / activity.</li>
+    <li><strong>Author Profile page</strong>: bio, recent research, follow / unfollow, ask-a-question, request 1:1 session, full coverage tab.</li>
+    <li>Q&amp;A inbox for analysts; SLA indicators; admin oversight.</li>
+    <li>1:1 booking integration with Calendly (or equivalent) per analyst.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M13. Corporate Access &amp; Bespoke Work <em style="color:#dc2626;">(NEW)</em></span><span class="hours">Marketing Pages + Inbound CTAs</span></div>
+  <ul>
+    <li><strong>Corporate Access</strong> static page &mdash; what we do, how we do it, success stories.</li>
+    <li><strong>Expert Access</strong> &mdash; pedigree of experts, sector composition, &ldquo;express interest&rdquo; CTA.</li>
+    <li><strong>Podcasts, News &amp; Views</strong> &mdash; media interviews and viewpoints with player / embed.</li>
+    <li><strong>Bespoke Work</strong> &mdash; descriptive page + &ldquo;Initiate Bespoke Work&rdquo; request form routed to Sales.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M14. Editorial CMS &amp; Workflow</span><span class="hours">Functionally unchanged &middot; Rebuilt on new stack</span></div>
+  <ul>
+    <li><strong>Per BRD: workflow unchanged from current portal.</strong> Add &rarr; Review &rarr; Publish flow with checkout-lock is preserved; the surface is rebuilt on the new React stack with TipTap WYSIWYG.</li>
+    <li><strong>Add new report</strong> manually (admin override of publication-system feed).</li>
+    <li><strong>Review queue</strong> for awaiting-approval reports with <strong>checkout-locking</strong> (no two editors clash).</li>
+    <li>Full <strong>WYSIWYG editor</strong> (TipTap-based) loads complete HTML for in-line corrections.</li>
+    <li><strong>Published reports</strong> list with edit-and-replace-PDF capability; full version history.</li>
+    <li><strong>Manage Charts</strong> for Economy / Strategy / Sectorial research.</li>
+    <li><strong>HWAK Data Upload</strong> (weekly + consolidated Excel templates).</li>
+    <li>Disclosure template management (Word upload + preview).</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M15. Admin Modules</span><span class="hours">Configuration &middot; Logs &middot; Analytics</span></div>
+  <ul>
+    <li><strong>User Management</strong> &mdash; CRUD + role mgmt + bulk token generation/deactivation; internal &amp; external users.</li>
+    <li><strong>Event Management</strong>, <strong>Sector Management</strong>, <strong>Company Management</strong> (Status, Recommendation, TP, Analyst, Indicator).</li>
+    <li><strong>NSE &harr; Bloomberg</strong> code mapping for publication integration.</li>
+    <li><strong>Email Logs</strong> (account creation, OTP, token, report submission, approval) downloadable as CSV.</li>
+    <li><strong>Readership Analytics</strong> &mdash; Page / Report / Model / Author views.</li>
+    <li><strong>Product Usage Tracking</strong> (disclaimer view, cookie consent).</li>
+    <li><strong>Integration Logs</strong> &mdash; daily market data &amp; publication push.</li>
+    <li><strong>Data Upload UI</strong> for Valuation Summary / MF Tracker / NSE500 Reckoner / HWAK / ESG.</li>
+    <li><strong>Tag Analytics &amp; Merge</strong> &mdash; per-BRD admin view of tag usage frequency, duplicate / near-duplicate detection, and a merge-tags action to keep the taxonomy clean.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M16. Mobile App &mdash; A-ONE Research by IE Research</span><span class="hours">React Native + Expo &middot; iOS + Android &middot; Offline</span></div>
+  <ul>
+    <li><strong>Branding</strong>: A-ONE Research by IE Research (App Store / Play Store identity).</li>
+    <li><strong>Auth</strong> via OTP, then PIN or Biometric (Face ID / Fingerprint), backed by MMKV secure storage.</li>
+    <li>Dashboard, Coverage (sector heatmap &rarr; company list, no further drilldowns), Research reports (full reading experience), Authors, Corporate Access, Events.</li>
+    <li><strong>Editorial review</strong> for internal users with the same checkout-lock logic.</li>
+    <li><strong>Offline reading</strong> (saved reports), auto-housekeep after 30 days.</li>
+    <li><strong>Adaptive viewport detection</strong> &mdash; site detects whether it&rsquo;s opened on a laptop, large monitor or high-resolution conference screen and adjusts to the best view; on tablet / mobile web, prompts the user to download the app instead.</li>
+    <li>Footer link + QR to App Store / Play Store across all web pages (pre-login, post-login and error pages).</li>
+    <li><strong>Push notifications</strong> via FCM &amp; APNs &mdash; new report in followed sector / analyst, plus <strong>Topic Tracking Alerts</strong> (per BRD) on followed tags / themes.</li>
+    <li><strong>Author Profile on mobile</strong> &mdash; per BRD: shows bio, follow / Q&amp;A / 1:1 request, and sectors covered (with link to the Coverage &mdash; Sector page); <em>excludes</em> Recent Research and Coverage tabs.</li>
+    <li><strong>Admin modules NOT available</strong> on mobile.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M17. Integration Layer &amp; SEBI Compliance Engine</span><span class="hours">Publication System &middot; AI Summary &middot; Audit Trail</span></div>
+  <ul>
+    <li><strong>Trigger API</strong> exposed to Publication System (receives <code>document_id</code> + ticker list).</li>
+    <li>Three fetch APIs to pull report PDF/Word, financial data points (~500&ndash;600 per doc), and metadata.</li>
+    <li><strong>AI Summary worker</strong> (SQS queued, async) generates summary on publish/edit; stored in dedicated <code>document_summary</code> table; idempotent via content-hash.</li>
+    <li><strong>Audio summary</strong> generation using TTS (AWS Polly / Eleven Labs), stored on S3.</li>
+    <li><strong>Word &rarr; HTML5 conversion worker</strong> &mdash; sanitised, structured, TOC-ready output for the reader.</li>
+    <li>Email (OTP, notifications, summaries) via Amazon SES with bounce/complaint handling.</li>
+    <li><strong>SEBI Compliance Engine</strong>: immutable report archival (S3 Object Lock, WORM), 5-year minimum retention, full audit trail of every read/edit/approval, dynamic disclosure injection at publish-time.</li>
+  </ul>
+</div>
+
+<div class="module-card">
+  <div class="module-head"><span class="name">M18. Cross-cutting / Non-functional</span><span class="hours">Search &middot; Notifications &middot; Performance &middot; Observability</span></div>
+  <ul>
+    <li><strong>Search</strong>: OpenSearch / Meilisearch index across companies, sectors, analysts, reports, tags &mdash; with <strong>keyword highlighting</strong> in results, <strong>filter-by-section</strong>, and <strong>synonym / related-term recognition</strong> (per BRD UX requirements).</li>
+    <li><strong>Notifications</strong>: in-app, email, push (mobile) with user preferences.</li>
+    <li><strong>Performance budget</strong>: P95 page load &lt; 2s, search &lt; 500ms, AI summary worker &lt; 5min P95.</li>
+    <li><strong>Observability</strong>: CloudWatch dashboards, Sentry error tracking, structured JSON logs, alerting on SLO breach.</li>
+    <li><strong>Accessibility</strong>: WCAG 2.1 AA compliance for web (key screens).</li>
+    <li><strong>Internationalisation</strong>: English only at launch; structure ready for future expansion.</li>
+  </ul>
+</div>
+
+<!-- ==================== 3. FUNCTIONAL FLOW ==================== -->
+<div class="page-break"></div>
+<h2>3. Functional Flow</h2>
+
+<h3>3.1 End-User (Client) Journey</h3>
+<div class="flow-step"><strong>Step 1 &mdash; Land on portal:</strong> User visits the portal &rarr; if device has a valid cache token (issued in last 60 days), they are auto-logged-in &rarr; otherwise they enter their corporate email.</div>
+<div class="flow-step"><strong>Step 2 &mdash; Authenticate:</strong> System emails an OTP &rarr; user enters OTP &rarr; new cache token is issued and stored on the device (max 3 devices per user).</div>
+<div class="flow-step"><strong>Step 3 &mdash; Disclaimer &amp; Cookies (first login only):</strong> Disclosure page shown (with selectable tickers + price charts) + Cookie preferences flyer.</div>
+<div class="flow-step"><strong>Step 4 &mdash; Land on Dashboard:</strong> Recent Research feed (filtered by user preferences) + Key Reports + Upcoming Events + Search + Tags.</div>
+<div class="flow-step"><strong>Step 5 &mdash; Discover:</strong> User searches a company / analyst / keyword <em>or</em> drills into the Coverage page (sector tree-map) <em>or</em> opens a research card.</div>
+<div class="flow-step"><strong>Step 6 &mdash; Read Research:</strong> Full HTML report opens with TOC sidebar &mdash; user scrolls; AI summary slider available; audio playback option; Focus Mode toggle.</div>
+<div class="flow-step"><strong>Step 7 &mdash; Engage:</strong> At half-scroll, &ldquo;Talk to Analyst&rdquo; trigger appears &rarr; user can submit a query or book a 1:1 slot via Calendly-like flow.</div>
+<div class="flow-step"><strong>Step 8 &mdash; Save / Share:</strong> User bookmarks the report (resumable), copies short-link, follows the analyst.</div>
+<div class="flow-step"><strong>Step 9 &mdash; Sales follow-up:</strong> Readership analytics surface engaged clients to the Sales / Account Manager &rarr; who reaches out to convert intent into a trade.</div>
+
+<h3>3.2 Editorial / Publishing Flow</h3>
+<div class="flow-step"><strong>Step 1:</strong> Publication System produces a research report (Word/PDF) and calls the portal&rsquo;s <strong>Trigger API</strong> with <code>document_id</code> and ticker list.</div>
+<div class="flow-step"><strong>Step 2:</strong> Portal pulls report content + financial data points via 3 fetch APIs &rarr; stores in PostgreSQL + S3.</div>
+<div class="flow-step"><strong>Step 3:</strong> A worker queues the AI Summary + Audio generation &rarr; stored in <code>document_summary</code> table (content-hashed).</div>
+<div class="flow-step"><strong>Step 4 &mdash; Editorial Review:</strong> Report appears in the editor&rsquo;s &ldquo;Awaiting Approval&rdquo; queue &rarr; one editor checks it out (locked from others) &rarr; reviews and corrects in WYSIWYG.</div>
+<div class="flow-step"><strong>Step 5 &mdash; Publish:</strong> On approval, report goes live &rarr; appears on Dashboards / Coverage / Research listings &rarr; followers get notified.</div>
+<div class="flow-step"><strong>Step 6 &mdash; Post-publish edits:</strong> Admin can edit any published report (typo fixes, PDF replace) &rarr; AI summary auto-regenerates &rarr; audit log records every change.</div>
+<div class="flow-step"><strong>Step 7 &mdash; SEBI archival:</strong> The published report &mdash; with disclosures injected &mdash; is written to the immutable S3 archive (Object Lock, WORM) for the 5-year retention window. Every read, edit and approval is appended to the audit ledger.</div>
+
+<h3>3.3 Admin Flow</h3>
+<div class="flow-step"><strong>Access Requests:</strong> New user requests access &rarr; appears in admin queue &rarr; admin approves / rejects &rarr; user receives onboarding email + first login OTP.</div>
+<div class="flow-step"><strong>Configuration:</strong> Admin manages Sectors / Companies / Events / NSE&harr;Bloomberg mapping / Roles &amp; Permissions.</div>
+<div class="flow-step"><strong>Monitoring:</strong> Admin reviews Email logs, Integration logs, Readership analytics, Product usage tracking.</div>
+
+<!-- ==================== 4. TECHNICAL APPROACH ==================== -->
+<h2>4. Technical Approach (High Level)</h2>
+
+<p>We will build a modern, cloud-native platform on the stack confirmed during the discovery call.</p>
+
+<h3>4.1 Technology Stack</h3>
+<table>
+  <thead>
+    <tr><th style="width:30%">Layer</th><th>Technology</th><th>Why</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Web Frontend</strong></td><td>React 18 + TypeScript + Next.js + Recharts/D3</td><td>Fast, SEO-friendly for short-link sharing; rich charting for analytics</td></tr>
+    <tr><td><strong>Mobile App</strong></td><td>React Native + Expo + MMKV (secure storage)</td><td>Single codebase for iOS &amp; Android &mdash; ~40% cost &amp; time saving vs. native</td></tr>
+    <tr><td><strong>WYSIWYG Editor</strong></td><td>TipTap (ProseMirror-based)</td><td>Loads full HTML for editorial in-line corrections; extensible</td></tr>
+    <tr><td><strong>Device Fingerprint</strong></td><td>FingerprintJS Pro</td><td>Underpins passwordless 3-device cache-token auth</td></tr>
+    <tr><td><strong>Backend</strong></td><td>Node.js (NestJS) &mdash; modular service-oriented</td><td>Aligned with React talent pool; async-first for AI &amp; integration workloads</td></tr>
+    <tr><td><strong>Database</strong></td><td>PostgreSQL 15+ on Amazon RDS (Multi-AZ)</td><td>Confirmed in discovery; reliable for structured financial data</td></tr>
+    <tr><td><strong>Cache &amp; Queues</strong></td><td>Redis (sessions, rate limiting), Amazon SQS (async jobs)</td><td>Decouples AI summary, Word&rarr;HTML, ingestion workers</td></tr>
+    <tr><td><strong>Search</strong></td><td>OpenSearch / Meilisearch</td><td>Fast faceted search across reports, companies, analysts</td></tr>
+    <tr><td><strong>Storage</strong></td><td>Amazon S3 (with Object Lock for SEBI compliance)</td><td>Word/PDF originals, audio files, exports, immutable archive</td></tr>
+    <tr><td><strong>CDN</strong></td><td>CloudFront</td><td>Global delivery of HTML reports, images, audio</td></tr>
+    <tr><td><strong>Hosting</strong></td><td>AWS ECS Fargate (containerised)</td><td>Confirmed cloud; scales horizontally on traffic peaks (results season)</td></tr>
+    <tr><td><strong>Observability</strong></td><td>CloudWatch + Sentry + structured logs</td><td>Real-time error tracking, performance monitoring</td></tr>
+    <tr><td><strong>CI/CD</strong></td><td>GitHub Actions / GitLab CI + Terraform IaC + Fastlane (mobile)</td><td>Three environments (dev / staging / prod), reproducible deploys, automated app-store submissions</td></tr>
+  </tbody>
+</table>
+
+<h3>4.2 High-Level Architecture</h3>
+<div class="arch-box">
+<pre>  [ React Web Portal ]    [ iOS App ]    [ Android App ]
+            |                  |               |
+            +----------> [ API Gateway / ALB ] -+
+                                |
+   +-----------+----------+-----+-----+--------+----------+
+   |           |          |           |        |          |
+[Auth Svc] [Content Svc] [Analytics] [CMS] [Integration] [Admin]
+   |           |          |           |        |          |
+   +-----------+----------+--+--------+--------+----------+
+                             |
+   [ PostgreSQL RDS Multi-AZ ] [ Redis ] [ OpenSearch ] [ S3 + Object Lock ]
+                             |
+                  [ SQS Workers ]
+                       +-- AI Summary Worker (on publish/edit)
+                       +-- Audio TTS Worker
+                       +-- Word/PDF -> HTML Sanitiser
+                       +-- Publication-System Trigger Ingest
+
+   [ CloudFront CDN ]   [ CloudWatch + Sentry ]   [ AWS WAF + Secrets Mgr ]
+</pre>
+</div>
+
+<h3>4.3 Word/PDF &rarr; HTML Strategy</h3>
+<p>The most challenging technical component. Recommended hybrid approach:</p>
+<ol>
+  <li>Publication team exports report as <strong>HTML</strong> (Word built-in export) &mdash; ownership of structural correctness stays with the source.</li>
+  <li>Our pipeline ingests this HTML, runs a <strong>sanitisation + normalisation pass</strong> (sanitize-html + custom DOM transformer), enforces our schema, injects TOC anchors, AI-summary block and audio anchors.</li>
+  <li>For legacy reports we use <strong>Mammoth.js</strong> as fallback.</li>
+  <li>Edge-case templates beyond the agreed canonical set are handled under T&amp;M.</li>
+</ol>
+
+<h3>4.4 Security &amp; SEBI Compliance Architecture</h3>
+<p>The platform is engineered to meet <strong>SEBI Research Analyst Regulations 2014</strong> from day one. The compliance posture is built into the architecture, not retrofitted.</p>
+<ul>
+  <li><strong>Immutable report archive</strong> &mdash; every published report is written to S3 with <strong>Object Lock (WORM)</strong> enabled; cannot be modified or deleted within the retention window.</li>
+  <li><strong>5-year minimum retention</strong> &mdash; lifecycle policy enforced at bucket level; tiered to S3 Glacier for cost.</li>
+  <li><strong>Dynamic disclosure injection</strong> &mdash; per-ticker analyst disclosures are baked into the archived copy at publish-time; the disclosure version that was live at publish-time is preserved.</li>
+  <li><strong>Append-only audit trail</strong> &mdash; every action (read, edit, approve, publish, login, token issue) writes to an append-only Postgres ledger plus CloudWatch Logs Insights; tamper-evident.</li>
+  <li><strong>Encryption</strong> &mdash; TLS 1.3 in transit; AES-256 at rest (RDS, S3); KMS-managed keys.</li>
+  <li><strong>Secrets management</strong> &mdash; AWS Secrets Manager for all API keys, DB credentials, third-party tokens.</li>
+  <li><strong>Network security</strong> &mdash; AWS WAF (OWASP top-10 rules), rate limiting via Redis, private subnets for RDS / Redis / OpenSearch.</li>
+  <li><strong>RBAC</strong> &mdash; least-privilege role model enforced at API and DB level; admin actions require step-up MFA.</li>
+  <li><strong>SAST / DAST / SCA</strong> &mdash; in CI pipeline (Snyk / Semgrep / Dependabot); zero high-severity CVE on production deploy.</li>
+  <li><strong>Penetration test</strong> &mdash; one external pen-test before Phase 1 go-live; remediation included.</li>
+</ul>
+
+<!-- ==================== 5. ASSUMPTIONS ==================== -->
+<h2>5. Assumptions</h2>
+<ol>
+  <li><strong>Publication System APIs</strong> &mdash; the existing Publication System will provide the Trigger API endpoint, plus 3 fetch APIs with stable JSON schemas, &ge;99.5% uptime, retry semantics and idempotency keys defined.</li>
+  <li><strong>Word/PDF source</strong> &mdash; Ambit&rsquo;s production team will provide a maximum of <strong>8 sanctioned Word templates</strong> at kickoff. Any free-form analyst formatting / equations / embedded Excel objects beyond these templates may require T&amp;M.</li>
+  <li><strong>AI provider &amp; tokens</strong> &mdash; AI summary &amp; audio TTS use a hosted LLM API (OpenAI / Azure OpenAI / Anthropic). Ambit holds the API key and bears monthly token / TTS consumption costs. We integrate, debounce, and content-hash to minimise spend.</li>
+  <li><strong>Cloud account</strong> &mdash; Production AWS account is owned and billed directly by Ambit; we deploy into it.</li>
+  <li><strong>Domains &amp; certificates</strong> &mdash; Ambit provides domain, SSL certificates, email-sender domain (DNS access for SES configuration).</li>
+  <li><strong>Design assets</strong> &mdash; Final Figma designs (current revision) are the source of truth. Visual changes to designs post-kickoff follow Change Request process.</li>
+  <li><strong>Historical content</strong> &mdash; Pre-cutoff PDFs are served as-is (no HTML re-render). HTML rendering applies to reports published after go-live (or a mutually agreed cutoff).</li>
+  <li><strong>Compliance officer</strong> &mdash; Ambit assigns a SEBI Research Analyst compliance SPOC who signs off the disclosure engine, audit-trail design and retention policy.</li>
+  <li><strong>Editorial / analyst SMEs</strong> &mdash; available 4 hrs / week for clarifications on coverage taxonomy, HWAK scoring, editorial workflows.</li>
+  <li><strong>UAT</strong> &mdash; Ambit nominates UAT testers and signs off each milestone within 5 working days; otherwise milestone is deemed accepted.</li>
+  <li><strong>Calendly procurement</strong> &mdash; If 1:1 booking integration uses Calendly (or equivalent SaaS), Ambit procures and pays for the licence; we handle integration only.</li>
+  <li><strong>App Store / Play Store accounts</strong> &mdash; Ambit owns Apple Developer + Google Play Console accounts; we publish under those accounts. App-store fees borne by Ambit.</li>
+  <li><strong>HWAK / ESG data</strong> &mdash; Ambit&rsquo;s research team provides the scoring formulae, weights, data sources and refresh cadence in writing during Phase 1A; we build to spec.</li>
+  <li><strong>Bloomberg / NSE data licences</strong> &mdash; Ambit holds all market-data licences. We integrate; data licensing fees are direct-to-Ambit.</li>
+  <li><strong>Browser / OS support matrix</strong> &mdash; latest 2 versions of Chrome, Edge, Safari, Firefox; iOS 15+, Android 10+. Older versions are best-effort.</li>
+</ol>
+
+<!-- ==================== 6. OUT OF SCOPE ==================== -->
+<h2>6. Out of Scope</h2>
+<p>The following items are <strong>not included</strong> in this engagement and may be undertaken under a separate SOW or T&amp;M arrangement.</p>
+<ul>
+  <li><strong>Phase-2 AI Chatbot / Conversational AI / RAG</strong> over historical research reports (mentioned during discovery).</li>
+  <li>Real-time market data feeds, trading / order-execution integrations.</li>
+  <li>Custom AI model training or fine-tuning (we integrate hosted LLM APIs).</li>
+  <li>Native iOS / Android (Swift / Kotlin) builds &mdash; mobile is delivered via React Native.</li>
+  <li>Migration of historical research content to HTML format (treated as separate workstream if required).</li>
+  <li>Data licensing fees (Bloomberg, Refinitiv, NSE/BSE feeds).</li>
+  <li>SEBI / SOC2 / ISO certification audit fees (we deliver compliance-ready posture; auditor engagement is the client&rsquo;s).</li>
+  <li>Production cloud infrastructure costs (AWS billing direct-to-client).</li>
+  <li>AI / LLM token consumption &amp; TTS costs (direct-to-client).</li>
+  <li>Third-party SaaS licences (Sentry, log management, etc., if elected).</li>
+  <li>Editorial labour, content moderation, or research authoring.</li>
+  <li>Marketing site, brand identity design, content strategy.</li>
+  <li>Multilingual UI (English only in Phase 1).</li>
+  <li>Direct integration with brokerage / order-management systems.</li>
+  <li><strong>Blue Light Filter</strong> / dark-mode reading themes (mentioned in discovery as nice-to-have; can be added under CR).</li>
+  <li>Push notifications for non-research events (calendar invites, system alerts) beyond the agreed event types.</li>
+  <li>Custom analyst desktop tooling outside the editorial CMS (e.g. Excel plugins, Word macros).</li>
+</ul>
+
+<!-- ==================== 7. TIMELINE ==================== -->
+<div class="page-break"></div>
+<h2>7. Timeline Estimate</h2>
+
+<p>The project is delivered in <strong>two phases</strong>. Phase 1 ships the complete reader experience + editorial CMS + mobile app + core admin. Phase 2 covers extended analytics modules and additional content surfaces.</p>
+
+<div class="phase-banner">PHASE 1 &mdash; Reader Portal + Editorial CMS + Mobile App (~7 months)</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:8%">Phase</th>
+      <th style="width:14%">Duration</th>
+      <th>Focus</th>
+      <th style="width:25%">Demoable Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>0</strong></td>
+      <td>Wk 1&ndash;2</td>
+      <td>Discovery confirmation, Figma walkthrough, design system, IaC + CI/CD bootstrap, Publication System API contract finalised</td>
+      <td>Kick-off complete; staging environment live</td>
+    </tr>
+    <tr>
+      <td><strong>1A</strong></td>
+      <td>Wk 3&ndash;6</td>
+      <td>Auth (passwordless, 3-device, OTP), Disclosures, Request Access, Cookie consent, foundation APIs</td>
+      <td>End-to-end login &rarr; disclaimer &rarr; landing demo</td>
+    </tr>
+    <tr>
+      <td><strong>1B</strong></td>
+      <td>Wk 7&ndash;11</td>
+      <td>Word&rarr;HTML pipeline, Editorial CMS (review queue + checkout-lock + WYSIWYG), Publication System integration (Trigger API + 3 fetch APIs + AI Summary worker)</td>
+      <td>One Word report goes Word &rarr; HTML &rarr; Live end-to-end</td>
+    </tr>
+    <tr>
+      <td><strong>1C</strong></td>
+      <td>Wk 12&ndash;17</td>
+      <td>Dashboard, Research Report HTML5 reader (TOC, AI Summary slider, Audio, Time-to-Read, Trigger-to-Connect), Coverage View by Stock</td>
+      <td>Reader portal MVP usable on staging</td>
+    </tr>
+    <tr>
+      <td><strong>1D</strong></td>
+      <td>Wk 18&ndash;22</td>
+      <td>Coverage View by Sector (treemap, charts), Authors module, basic Admin (User/Company mgmt, Email logs, Readership), Mobile App Phase 1 (Auth + Dashboard + Reports + Authors + Offline)</td>
+      <td>Mobile app TestFlight / internal track + reader portal feature-complete</td>
+    </tr>
+    <tr>
+      <td><strong>1E</strong></td>
+      <td>Wk 23&ndash;28</td>
+      <td>UAT, performance &amp; load testing, security hardening, sign-off</td>
+      <td><strong>Phase 1 Production Go-Live</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="phase-banner">PHASE 2 &mdash; Extended Analytics, ESG &amp; Content Surfaces (~4 months)</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:8%">Phase</th>
+      <th style="width:14%">Duration</th>
+      <th>Focus</th>
+      <th style="width:25%">Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>2A</strong></td>
+      <td>Wk 1&ndash;6</td>
+      <td>HWAK Analytics full rebuild, ESG / Corporate Governance module (NEW), Data Analytics Dashboards (Valuation Summary, MF Tracker, NSE500 Reckoner), Editorial Charts management, NSE&harr;Bloomberg mapping UI</td>
+      <td>HWAK + ESG + analytics dashboards live</td>
+    </tr>
+    <tr>
+      <td><strong>2B</strong></td>
+      <td>Wk 7&ndash;12</td>
+      <td>Publishing Authors module (Q&amp;A + 1:1 booking), Corporate Access &amp; Bespoke Work, Podcasts &amp; News &amp; Views, Events module, Mobile editorial review module, full Admin Logs &amp; Integration Logs, advanced search</td>
+      <td>Full feature set complete</td>
+    </tr>
+    <tr>
+      <td><strong>2C</strong></td>
+      <td>Wk 13&ndash;16</td>
+      <td>UAT, performance &amp; load tuning, external pen-test, SEBI compliance audit, sunset of legacy portal</td>
+      <td><strong>Phase 2 Go-Live + Legacy Portal Sunset</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="legend">Total combined duration: <strong>~11 calendar months</strong> from kickoff to legacy portal sunset, assuming team availability and timely client UAT cycles.</p>
+
+<!-- ==================== 8. EFFORT ESTIMATION ==================== -->
+<h2>8. Effort Estimation</h2>
+
+<p>Detailed module-wise effort, expressed in <strong>person-days</strong> (1 day = 8 hours). Includes development, unit testing, code review and standard QA. Cross-cutting workstreams (DevOps, security, automation) are listed separately.</p>
+
+<h3>8.1 Functional Modules (18 Modules)</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width:5%">#</th>
+      <th style="width:38%">Module</th>
+      <th class="right" style="width:11%">Backend (days)</th>
+      <th class="right" style="width:11%">Frontend (days)</th>
+      <th class="right" style="width:11%">Total (days)</th>
+      <th style="width:24%">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>M1</td><td>Authentication &amp; Access (passwordless, 3-device, OTP, captcha, cookie consent)</td><td class="right">14</td><td class="right">12</td><td class="right"><strong>26</strong></td><td>FingerprintJS + active-session UI</td></tr>
+    <tr><td>M2</td><td>Disclosures &amp; Terms (SEBI dynamic, Word-template-driven)</td><td class="right">10</td><td class="right">6</td><td class="right"><strong>16</strong></td><td>docx parser + per-report injection</td></tr>
+    <tr><td>M3</td><td>Dashboard (feed/sort/filter/tags/cloud/events/tour/key-reports)</td><td class="right">10</td><td class="right">20</td><td class="right"><strong>30</strong></td><td>Tag cloud + product tour</td></tr>
+    <tr><td>M4</td><td>User Profile &amp; Preferences (avatar, prefs, follow, bookmarks)</td><td class="right">8</td><td class="right">12</td><td class="right"><strong>20</strong></td><td>Follow graph + read-later</td></tr>
+    <tr><td>M5</td><td>Coverage &mdash; View by Sector (47 sectors, treemap, bubble, XY)</td><td class="right">12</td><td class="right">24</td><td class="right"><strong>36</strong></td><td>Recharts / D3 interactivity</td></tr>
+    <tr><td>M6</td><td>Coverage &mdash; View by Stock (270+ stocks, price, financials, peers, HWAK)</td><td class="right">20</td><td class="right">30</td><td class="right"><strong>50</strong></td><td>Excel export + many charts</td></tr>
+    <tr><td>M7</td><td>Research Reports &mdash; Listing &amp; HTML5 Detail (TOC/AI/audio/Trigger-to-Connect/Focus)</td><td class="right">22</td><td class="right">42</td><td class="right"><strong>64</strong></td><td>The heart of the platform</td></tr>
+    <tr><td>M8</td><td><strong>Events Module (NEW)</strong> &mdash; conferences, RSVP, dashboard widget</td><td class="right">8</td><td class="right">10</td><td class="right"><strong>18</strong></td><td>Email notifications</td></tr>
+    <tr><td>M9</td><td>HWAK Analytics (Full Rebuild) &mdash; deciles, heatmap, drill-down</td><td class="right">12</td><td class="right">22</td><td class="right"><strong>34</strong></td><td>Cross-filter charts</td></tr>
+    <tr><td>M10</td><td><strong>ESG / Corporate Governance (NEW)</strong> &mdash; scoring, heatmaps, comparatives</td><td class="right">14</td><td class="right">22</td><td class="right"><strong>36</strong></td><td>Awaits scoring spec</td></tr>
+    <tr><td>M11</td><td>Data Analytics Dashboards (Valuation, MF Tracker, NSE500 Reckoner)</td><td class="right">12</td><td class="right">18</td><td class="right"><strong>30</strong></td><td>Column chooser + Excel export</td></tr>
+    <tr><td>M12</td><td><strong>Publishing Authors (NEW)</strong> &mdash; cards, profile, Q&amp;A, 1:1 booking (Calendly)</td><td class="right">14</td><td class="right">18</td><td class="right"><strong>32</strong></td><td>Q&amp;A moderation + booking integration</td></tr>
+    <tr><td>M13</td><td><strong>Corporate Access &amp; Bespoke Work (NEW)</strong> &mdash; static + Experts + Podcasts + Bespoke form</td><td class="right">6</td><td class="right">10</td><td class="right"><strong>16</strong></td><td>CRUD + media embed</td></tr>
+    <tr><td>M14</td><td>Editorial CMS &amp; Workflow (queue/checkout-lock/TipTap WYSIWYG/HWAK upload)</td><td class="right">28</td><td class="right">32</td><td class="right"><strong>60</strong></td><td>Largest editorial module</td></tr>
+    <tr><td>M15</td><td>Admin Modules (User/RBAC, Sector/Company/Event mgmt, NSE&harr;BBG mapping, all logs &amp; analytics)</td><td class="right">28</td><td class="right">34</td><td class="right"><strong>62</strong></td><td>Consolidated admin surface</td></tr>
+    <tr><td>M16</td><td>Mobile App &mdash; A-ONE Research (RN + Expo, full app w/ offline + biometric)</td><td class="right">10</td><td class="right">90</td><td class="right"><strong>100</strong></td><td>iOS + Android + offline + push</td></tr>
+    <tr><td>M17</td><td>Integration Layer + SEBI Compliance Engine (Trigger + 3 fetch APIs + AI/Audio/HTML workers + audit + Object Lock)</td><td class="right">42</td><td class="right">6</td><td class="right"><strong>48</strong></td><td>SQS + retry/DLQ + WORM archive</td></tr>
+    <tr><td>M18</td><td>Cross-cutting (Search, Notifications, Performance budget, A11y)</td><td class="right">12</td><td class="right">18</td><td class="right"><strong>30</strong></td><td>OpenSearch + WCAG AA</td></tr>
+  </tbody>
+  <tfoot>
+    <tr style="background:#f1f5f9;font-weight:700">
+      <td colspan="2" class="right">Functional modules subtotal</td>
+      <td class="right">282</td>
+      <td class="right">426</td>
+      <td class="right"><strong>708</strong></td>
+      <td>person-days</td>
+    </tr>
+  </tfoot>
+</table>
+
+<h3>8.2 Cross-Cutting Engineering Workstreams</h3>
+<table>
+  <thead>
+    <tr><th style="width:8%">#</th><th style="width:60%">Workstream</th><th class="right" style="width:15%">Days</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>C1</td><td>CI/CD pipelines (Backend + Frontend + RN, Fastlane / EAS builds)</td><td class="right">22</td></tr>
+    <tr><td>C2</td><td>Infrastructure as Code (Terraform &mdash; dev / staging / prod on AWS)</td><td class="right">24</td></tr>
+    <tr><td>C3</td><td>Database schema, migrations &amp; seed scripts</td><td class="right">14</td></tr>
+    <tr><td>C4</td><td>End-to-end test automation (Playwright web + Detox mobile)</td><td class="right">30</td></tr>
+    <tr><td>C5</td><td>Performance &amp; load testing (3&times; peak target)</td><td class="right">14</td></tr>
+    <tr><td>C6</td><td>Security hardening + OWASP review + SAST/DAST/SCA + external pen-test remediation</td><td class="right">22</td></tr>
+    <tr><td>C7</td><td>Observability (CloudWatch dashboards + Sentry + structured logs + SLO alerting)</td><td class="right">12</td></tr>
+    <tr><td>C8</td><td>Documentation &amp; handover (Runbook, OpenAPI spec, Admin guide, SBOM)</td><td class="right">14</td></tr>
+    <tr><td>C9</td><td>UAT support + bug-fix &amp; stabilisation reserve</td><td class="right">36</td></tr>
+  </tbody>
+  <tfoot>
+    <tr style="background:#f1f5f9;font-weight:700">
+      <td colspan="2" class="right">Cross-cutting subtotal</td>
+      <td class="right"><strong>188</strong></td>
+    </tr>
+  </tfoot>
+</table>
+
+<h3>8.3 Effort Roll-Up</h3>
+<table>
+  <thead>
+    <tr><th style="width:60%">Bucket</th><th class="right">Person-Days</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Functional Modules (M1&ndash;M18)</td><td class="right">708</td></tr>
+    <tr><td>Cross-Cutting Engineering (C1&ndash;C9)</td><td class="right">188</td></tr>
+    <tr><td>Project Management &amp; client communication (~10%)</td><td class="right">90</td></tr>
+    <tr><td>Sub-total</td><td class="right">986</td></tr>
+    <tr><td>Recommended buffer / contingency (~11% &mdash; integration drift, design churn, vendor HTML edge cases, ESG spec churn)</td><td class="right">+ 112</td></tr>
+  </tbody>
+  <tfoot>
+    <tr style="background:#1e40af;color:#fff;font-weight:700">
+      <td class="right">Total Project Effort</td>
+      <td class="right">~ 1,098 person-days &nbsp; (~ 8,784 hours)</td>
+    </tr>
+  </tfoot>
+</table>
+
+<div class="kpi-row">
+  <div class="kpi"><span class="kpi-num">18</span><span class="kpi-label">Functional Modules</span></div>
+  <div class="kpi"><span class="kpi-num">~1,098</span><span class="kpi-label">Person-Days</span></div>
+  <div class="kpi"><span class="kpi-num">~11</span><span class="kpi-label">Calendar Months</span></div>
+  <div class="kpi"><span class="kpi-num">5.8</span><span class="kpi-label">FTE Core Team</span></div>
+</div>
+
+<h3>8.4 Recommended Team</h3>
+<table>
+  <thead>
+    <tr><th>Role</th><th>Allocation</th><th>Responsibility</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tech Lead / Architect</td><td>100% / 11 mo</td><td>Architecture, code review, integration design, AI &amp; rendering pipelines, SEBI compliance design</td></tr>
+    <tr><td>Senior Backend Engineer (&times;2)</td><td>100% / 11 mo</td><td>APIs, integrations, DB, AI orchestration, admin services, audit ledger</td></tr>
+    <tr><td>Senior Frontend Engineer (&times;2)</td><td>100% / 11 mo</td><td>Web app, dashboards, reader experience, charts, ESG/HWAK UI</td></tr>
+    <tr><td>React Native Engineer</td><td>100% / 6 mo</td><td>Mobile app end-to-end &mdash; A-ONE Research (joins month 2)</td></tr>
+    <tr><td>QA / Test Automation</td><td>50% / 9 mo</td><td>E2E suite (Playwright + Detox), regression, performance, SEBI audit-trail tests</td></tr>
+    <tr><td>DevOps / SRE</td><td>30% / 11 mo</td><td>IaC, CI/CD, environments, observability, security, S3 Object Lock setup</td></tr>
+    <tr><td>UI/UX Designer</td><td>50% / 4 mo</td><td>Figma updates, design system, micro-interactions, A-ONE Research mobile branding</td></tr>
+    <tr><td>Project Manager</td><td>30% / 11 mo</td><td>Sprint planning, client communication, status reporting, CR governance</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== 9. DELIVERABLES ==================== -->
+<h2>9. Deliverables</h2>
+<ul>
+  <li><strong>Web Application</strong> &mdash; production-ready React portal covering all 18 modules (responsive, desktop-first).</li>
+  <li><strong>Mobile App &mdash; A-ONE Research by IE Research</strong> &mdash; iOS &amp; Android (React Native + Expo), published to App Store and Google Play.</li>
+  <li><strong>Backend Services</strong> &mdash; containerised Node.js (NestJS) microservices, deployable to AWS ECS Fargate.</li>
+  <li><strong>Editorial CMS &amp; Admin Panel</strong> &mdash; integrated within the same web app under role-gated routes.</li>
+  <li><strong>Document Rendering Pipeline</strong> &mdash; Word/PDF &rarr; sanitised HTML5 with TOC + audio + AI summary anchors.</li>
+  <li><strong>AI Summary &amp; Audio Worker</strong> &mdash; queue-driven, idempotent, content-hashed.</li>
+  <li><strong>Publication System Integration</strong> &mdash; Trigger API + 3 fetch APIs + retry / DLQ.</li>
+  <li><strong>SEBI Compliance Engine</strong> &mdash; immutable archive (S3 Object Lock), append-only audit ledger, dynamic disclosure injection, 5-year retention policy.</li>
+  <li><strong>Infrastructure as Code</strong> &mdash; Terraform modules for dev / staging / prod.</li>
+  <li><strong>CI/CD Pipelines</strong> &mdash; automated build, test, deploy for all surfaces (incl. Fastlane for app-store).</li>
+  <li><strong>End-to-End Test Suite</strong> &mdash; Playwright (web) + Detox (mobile).</li>
+  <li><strong>OpenAPI Specification</strong> &mdash; complete API documentation.</li>
+  <li><strong>Runbook, Deployment Guide, Admin Guide, Compliance Guide</strong>.</li>
+  <li><strong>Software Bill of Materials (SBOM)</strong> &mdash; open-source dependency disclosure.</li>
+  <li><strong>External Pen-Test Report</strong> &mdash; with remediation evidence.</li>
+  <li><strong>UAT Sign-off documents</strong> per phase.</li>
+  <li><strong>Source code</strong> on Ambit&rsquo;s Git repository (read access from Day 1).</li>
+</ul>
+
+<!-- ==================== 10. RISKS & DEPENDENCIES ==================== -->
+<div class="page-break"></div>
+<h2>10. Risks &amp; Dependencies</h2>
+
+<h3>10.1 Project Risks &amp; Mitigation</h3>
+<table>
+  <thead>
+    <tr><th style="width:30%">Risk</th><th style="width:25%">Impact</th><th>Mitigation</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Word/PDF &rarr; HTML edge cases</strong></td>
+      <td>Schedule slip in Phase 1B; visual fidelity gaps</td>
+      <td>Lock canonical templates at kickoff; build conversion spike in Week 2; agree fidelity SLA (95% visual match on sanctioned templates); PDF fallback for outliers; T&amp;M for non-canonical templates</td>
+    </tr>
+    <tr>
+      <td><strong>Publication System API SLA breach</strong></td>
+      <td>Reports stop flowing; portal goes stale</td>
+      <td>Circuit breaker + 24-hour cache + degraded-mode UI; idempotency keys + dead-letter queue + retries; contractual SLA &amp; alerting</td>
+    </tr>
+    <tr>
+      <td><strong>Real-time load on results season</strong> (270+ stocks publishing nearly simultaneously)</td>
+      <td>API saturation, slow page loads</td>
+      <td>SQS-based async ingestion; backpressure; horizontal scaling on ECS; load testing at 3&times; expected peak in Month 2</td>
+    </tr>
+    <tr>
+      <td><strong>AI summary cost overruns</strong> (multiple edits per report &rarr; repeated LLM calls)</td>
+      <td>Unexpected monthly API bill</td>
+      <td>Debounce + content-hash + draft-vs-publish gating; transparent token-usage dashboard for Ambit; monthly cap with alerting</td>
+    </tr>
+    <tr>
+      <td><strong>SEBI compliance drift</strong></td>
+      <td>Regulatory non-compliance risk</td>
+      <td>Compliance officer signs off disclosure engine in Phase 1A; immutable audit log via append-only Postgres + S3 Object Lock (5-year retention)</td>
+    </tr>
+    <tr>
+      <td><strong>Multi-device cache-token security</strong> (3-device passwordless)</td>
+      <td>Token theft / abuse</td>
+      <td>Device registry with hardware fingerprint; refresh-token rotation; remote-logout admin tool; suspicious-IP alerting</td>
+    </tr>
+    <tr>
+      <td><strong>HWAK / ESG analytics spec churn</strong></td>
+      <td>Phase-2 timeline slip; rework on charts &amp; data model</td>
+      <td>Lock scoring formulae, weights &amp; data sources in written tech spec before Phase 2 sprint 1; new factors handled as Change Request</td>
+    </tr>
+    <tr>
+      <td><strong>Calendly (1:1 booking) procurement delay</strong></td>
+      <td>Publishing Authors module ships without booking flow</td>
+      <td>Procurement initiated by Ambit at kickoff; integration is a thin adapter &mdash; alternative providers (Cal.com, Microsoft Bookings) can be swapped in if delayed</td>
+    </tr>
+    <tr>
+      <td><strong>Mobile app store rejection</strong></td>
+      <td>Launch delay</td>
+      <td>Compliance review pre-submission (Apple guidelines, financial-content rules); reserve 2-week buffer in Phase 1D</td>
+    </tr>
+    <tr>
+      <td><strong>Scope creep mid-project</strong></td>
+      <td>Schedule slip, budget pressure</td>
+      <td>Formal Change Request process &mdash; written sign-off before work starts; T&amp;M billing for additions</td>
+    </tr>
+    <tr>
+      <td><strong>Key personnel loss</strong></td>
+      <td>Velocity drop</td>
+      <td>Pair-programming culture; named back-up engineers; internal documentation discipline</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>10.2 Client Dependencies (Ambit)</h3>
+<p>The following are required from Ambit for the project to stay on track.</p>
+<table>
+  <thead>
+    <tr><th style="width:30%">Dependency</th><th style="width:15%">When needed</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Publication System sandbox + prod access</strong></td><td>Week 1</td><td>API documentation, sample payloads, schema contract, SLA commitment</td></tr>
+    <tr><td><strong>Sample Word / PDF reports</strong> (all template variants, edge cases)</td><td>Week 1</td><td>Minimum 25 representative reports across the 8 sanctioned templates</td></tr>
+    <tr><td><strong>AWS production account ownership</strong></td><td>Week 2</td><td>IAM access for our deployment role; billing direct-to-Ambit</td></tr>
+    <tr><td><strong>SEBI compliance officer SPOC</strong></td><td>Week 2</td><td>Signs off disclosure engine, audit-trail design, retention policy</td></tr>
+    <tr><td><strong>Editorial / analyst SMEs</strong></td><td>Throughout</td><td>4 hrs / week for clarifications</td></tr>
+    <tr><td><strong>Final Figma designs</strong> (current version locked)</td><td>Week 1</td><td>Visual changes post-lock follow CR process</td></tr>
+    <tr><td><strong>AI provider account</strong> (OpenAI / equivalent)</td><td>Week 6 (before AI Summary work)</td><td>Ambit holds API key &amp; bears token cost</td></tr>
+    <tr><td><strong>Email-sender domain + DNS access</strong></td><td>Week 3</td><td>For Amazon SES configuration (OTP / notifications)</td></tr>
+    <tr><td><strong>Domain &amp; SSL certificates</strong></td><td>Week 4</td><td>For staging &amp; production environments</td></tr>
+    <tr><td><strong>UAT testers</strong> nominated &amp; available per milestone</td><td>Each phase end</td><td>Sign-off within 5 working days; otherwise auto-accepted</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== 11. SUCCESS METRICS ==================== -->
+<h2>11. Project Success Metrics</h2>
+<p>The platform will be considered successful when the following measurable KPIs are achieved on production.</p>
+<table>
+  <thead>
+    <tr><th style="width:50%">Metric</th><th>Target</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Report publish time (Word in &rarr; live HTML)</td><td>&lt; 15 minutes; zero manual cleanup on 90% of reports</td></tr>
+    <tr><td>60-page HTML report Time-to-Interactive (broadband)</td><td>&lt; 2.5 seconds</td></tr>
+    <tr><td>60-page HTML report Time-to-Interactive (4G)</td><td>&lt; 4 seconds</td></tr>
+    <tr><td>Mobile dashboard cold load on 4G</td><td>&lt; 3 seconds</td></tr>
+    <tr><td>Search P95 latency across 10K+ reports</td><td>&lt; 400 ms</td></tr>
+    <tr><td>API P95 response time</td><td>&lt; 400 ms read &middot; &lt; 800 ms write</td></tr>
+    <tr><td>Concurrent analysts in editorial CMS without lock conflicts</td><td>50+</td></tr>
+    <tr><td>Concurrent users supported on portal</td><td>500 sustained &middot; 1,000 peak</td></tr>
+    <tr><td>Cross-browser support</td><td>Chrome, Edge, Safari, Firefox &mdash; latest 2 versions</td></tr>
+    <tr><td>Mobile platform support</td><td>iOS 15+ &middot; Android 10+</td></tr>
+    <tr><td>Test coverage on critical paths</td><td>&ge; 70% unit; 100% on auth / publishing / permissions</td></tr>
+    <tr><td>AI Summary generation P95 (after publish)</td><td>&lt; 5 minutes end-to-end (text + audio)</td></tr>
+    <tr><td>Mobile offline reading availability</td><td>100% of bookmarked reports for 30 days; auto-housekeep thereafter</td></tr>
+    <tr><td>SEBI audit-trail completeness</td><td>100% of read / edit / approve / publish events captured; tamper-evident</td></tr>
+    <tr><td>Production uptime SLO</td><td>99.5% monthly (infrastructure-dependent)</td></tr>
+  </tbody>
+</table>
+
+<!-- ==================== 12. CONCLUSION ==================== -->
+<h2>12. Conclusion</h2>
+
+<div class="callout">
+<p>Ambit Capital is one of India&rsquo;s most respected institutional research houses, and the new Research Portal is an opportunity to give your clients a reading and analytics experience worthy of that brand.</p>
+<p>This SOW is grounded in the BRD authored by Suraj Menon, the discovery call held on 17 April 2026, the Figma designs already circulated, and a live audit of the existing portal. It scopes <strong>18 modules</strong> &mdash; including <strong>4 brand-new modules</strong> (ESG / Corporate Governance, Publishing Authors, Corporate Access, Bespoke Work) and a full rebuild of HWAK Analytics &mdash; covering <strong>270+ stocks across 47 sectors</strong> with a SEBI-compliant infrastructure from day one.</p>
+<p>It commits to a phased, demoable delivery &mdash; so Ambit sees value early, every milestone is concretely measurable, and risk stays low through every step of the build. Core team of <strong>5.8 FTE</strong>, total effort <strong>~1,098 person-days (~8,784 hours) over ~11 calendar months</strong>, including a 6-month mobile-app workstream that delivers the <strong>A-ONE Research by IE Research</strong> app on iOS and Android.</p>
+<p>Our team brings the technical depth needed for the hard parts (Word &rarr; HTML rendering, real-time integration with the Publication System, AI summary orchestration, mobile-first reading experience, SEBI compliance engine) and the discipline to ship cleanly to production. We treat compliance, security and observability as first-class &mdash; not afterthoughts.</p>
+<p>This estimate has been independently challenged by our internal product, analyst, architect and developer reviewers and adjusted for realism. We&rsquo;re ready to start the moment you give the go-ahead. Looking forward to building this with you.</p>
+</div>
+
+<hr>
+<p class="small center">
+  Prepared by <strong>Innodeed</strong> &nbsp;|&nbsp; 23 April 2026<br>
+  Statement of Work &mdash; Ambit Research Portal Revamp &amp; A-ONE Research Mobile App &mdash; Confidential
+</p>
+
+</body>
+</html>
