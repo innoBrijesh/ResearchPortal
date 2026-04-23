@@ -1366,7 +1366,7 @@
 
 <p>The project is delivered in <strong>two phases</strong>. Phase 1 ships the complete reader experience + editorial CMS + mobile app + core admin. Phase 2 covers extended analytics modules and additional content surfaces.</p>
 
-<div class="phase-banner">PHASE 1 &mdash; Reader Portal + Editorial CMS + Mobile App (~7 months)</div>
+<div class="phase-banner">PHASE 1 &mdash; Reader Portal + Editorial CMS + Mobile App (~9.5 months)</div>
 
 <table>
   <thead>
@@ -1386,38 +1386,38 @@
     </tr>
     <tr>
       <td><strong>1A</strong></td>
-      <td>Wk 3&ndash;6</td>
+      <td>Wk 3&ndash;7</td>
       <td>Auth (passwordless, 3-device, OTP), Disclosures, Request Access, Cookie consent, foundation APIs</td>
       <td>End-to-end login &rarr; disclaimer &rarr; landing demo</td>
     </tr>
     <tr>
       <td><strong>1B</strong></td>
-      <td>Wk 7&ndash;11</td>
+      <td>Wk 8&ndash;13</td>
       <td>Word&rarr;HTML pipeline, Editorial CMS (review queue + checkout-lock + WYSIWYG), Publication System integration (Trigger API + 3 fetch APIs + AI Summary worker)</td>
       <td>One Word report goes Word &rarr; HTML &rarr; Live end-to-end</td>
     </tr>
     <tr>
       <td><strong>1C</strong></td>
-      <td>Wk 12&ndash;17</td>
+      <td>Wk 14&ndash;21</td>
       <td>Dashboard, Research Report HTML5 reader (TOC, AI Summary slider, Audio, Time-to-Read, Trigger-to-Connect), Coverage View by Stock</td>
       <td>Reader portal MVP usable on staging</td>
     </tr>
     <tr>
       <td><strong>1D</strong></td>
-      <td>Wk 18&ndash;22</td>
+      <td>Wk 22&ndash;32</td>
       <td>Coverage View by Sector (treemap, charts), Authors module, basic Admin (User/Company mgmt, Email logs, Readership), Mobile App Phase 1 (Auth + Dashboard + Reports + Authors + Offline)</td>
       <td>Mobile app TestFlight / internal track + reader portal feature-complete</td>
     </tr>
     <tr>
       <td><strong>1E</strong></td>
-      <td>Wk 23&ndash;28</td>
+      <td>Wk 33&ndash;41</td>
       <td>UAT, performance &amp; load testing, security hardening, sign-off</td>
       <td><strong>Phase 1 Production Go-Live</strong></td>
     </tr>
   </tbody>
 </table>
 
-<div class="phase-banner">PHASE 2 &mdash; Extended Analytics, ESG &amp; Content Surfaces (~4 months)</div>
+<div class="phase-banner">PHASE 2 &mdash; Extended Analytics, ESG &amp; Content Surfaces (~5.5 months)</div>
 
 <table>
   <thead>
@@ -1431,26 +1431,26 @@
   <tbody>
     <tr>
       <td><strong>2A</strong></td>
-      <td>Wk 1&ndash;6</td>
+      <td>Wk 1&ndash;8</td>
       <td>HWAK Analytics full rebuild, ESG / Corporate Governance module (NEW), Data Analytics Dashboards (Valuation Summary, MF Tracker, NSE500 Reckoner), Editorial Charts management, NSE&harr;Bloomberg mapping UI</td>
       <td>HWAK + ESG + analytics dashboards live</td>
     </tr>
     <tr>
       <td><strong>2B</strong></td>
-      <td>Wk 7&ndash;12</td>
+      <td>Wk 9&ndash;18</td>
       <td>Publishing Authors module (Q&amp;A + 1:1 booking), Corporate Access &amp; Bespoke Work, Podcasts &amp; News &amp; Views, Events module, Mobile editorial review module, full Admin Logs &amp; Integration Logs, advanced search</td>
       <td>Full feature set complete</td>
     </tr>
     <tr>
       <td><strong>2C</strong></td>
-      <td>Wk 13&ndash;16</td>
+      <td>Wk 19&ndash;24</td>
       <td>UAT, performance &amp; load tuning, external pen-test, SEBI compliance audit, sunset of legacy portal</td>
       <td><strong>Phase 2 Go-Live + Legacy Portal Sunset</strong></td>
     </tr>
   </tbody>
 </table>
 
-<p class="legend">Total combined duration: <strong>~11 calendar months</strong> from kickoff to legacy portal sunset, assuming team availability and timely client UAT cycles.</p>
+<p class="legend">Total combined duration: <strong>~15 calendar months</strong> from kickoff to legacy portal sunset, with a core dev team of <strong>1 Backend + 1 Frontend + 1 React Native</strong> engineer (plus Tech Lead, QA, DevOps, Designer, PM). Assumes timely client UAT cycles and stable scope.</p>
 
 <!-- ==================== 8. EFFORT ESTIMATION ==================== -->
 <h2 id="effort">8. Module Delivery Schedule</h2>
@@ -1492,7 +1492,7 @@
 <p class="legend">Durations are approximate wall-clock estimates for the active build of each module, assuming a Backend and a Frontend engineer work on it concurrently. Modules within the same phase run on parallel tracks &mdash; see Section 7 for the actual phase calendar.</p>
 
 <h3>8.2 Cross-Cutting Engineering Workstreams</h3>
-<p>The following workstreams run <strong>continuously alongside</strong> functional development &mdash; not as separate phases. They are owned by the dedicated DevOps, QA, Tech Lead and PM roles and are factored into the overall 11-month timeline.</p>
+<p>The following workstreams run <strong>continuously alongside</strong> functional development &mdash; not as separate phases. They are owned by the dedicated DevOps, QA, Tech Lead and PM roles and are factored into the overall 15-month timeline.</p>
 <table>
   <thead>
     <tr><th style="width:8%">#</th><th style="width:42%">Workstream</th><th>Cadence</th></tr>
@@ -1514,7 +1514,7 @@
 <div class="kpi-row">
   <div class="kpi"><span class="kpi-num">18</span><span class="kpi-label">Functional Modules</span></div>
   <div class="kpi"><span class="kpi-num">2</span><span class="kpi-label">Delivery Phases</span></div>
-  <div class="kpi"><span class="kpi-num">~11</span><span class="kpi-label">Calendar Months</span></div>
+  <div class="kpi"><span class="kpi-num">~15</span><span class="kpi-label">Calendar Months</span></div>
   <div class="kpi"><span class="kpi-num">8</span><span class="kpi-label">Specialist Roles</span></div>
 </div>
 
@@ -1525,9 +1525,9 @@
     <tr><th style="width:30%">Role</th><th style="width:25%">Engagement window</th><th>Responsibility</th></tr>
   </thead>
   <tbody>
-    <tr><td>Tech Lead / Architect</td><td>Full project</td><td>Architecture, code review, integration design, AI &amp; rendering pipelines, SEBI compliance design</td></tr>
-    <tr><td>Senior Backend Engineer (&times; 2)</td><td>Full project</td><td>APIs, integrations, DB, AI orchestration, admin services, audit ledger</td></tr>
-    <tr><td>Senior Frontend Engineer (&times; 2)</td><td>Full project</td><td>Web app, dashboards, reader experience, charts, ESG / HWAK UI</td></tr>
+    <tr><td>Tech Lead / Architect</td><td>Full project</td><td>Architecture, code review, integration design, AI &amp; rendering pipelines, SEBI compliance design; also contributes to backend coding on integration &amp; compliance modules</td></tr>
+    <tr><td>Senior Backend Engineer</td><td>Full project</td><td>APIs, integrations, DB, AI orchestration, admin services, audit ledger</td></tr>
+    <tr><td>Senior Frontend Engineer</td><td>Full project</td><td>Web app, dashboards, reader experience, charts, ESG / HWAK UI</td></tr>
     <tr><td>React Native Engineer</td><td>From Month 2 &mdash; mobile workstream end-to-end</td><td>Mobile app end-to-end &mdash; A-ONE Research by IE Research</td></tr>
     <tr><td>QA / Test Automation</td><td>Continuous from Month 3</td><td>E2E suite (Playwright + Detox), regression, performance, SEBI audit-trail tests</td></tr>
     <tr><td>DevOps / SRE</td><td>Full project (continuous)</td><td>IaC, CI/CD, environments, observability, security, S3 Object Lock setup</td></tr>
@@ -1678,7 +1678,7 @@
 <div class="callout">
 <p>Ambit Capital is one of India&rsquo;s most respected institutional research houses, and the new Research Portal is an opportunity to give your clients a reading and analytics experience worthy of that brand.</p>
 <p>This SOW is grounded in the BRD authored by Suraj Menon, the discovery call held on 17 April 2026, the Figma designs already circulated, and a live audit of the existing portal. It scopes <strong>18 modules</strong> &mdash; including <strong>4 brand-new modules</strong> (ESG / Corporate Governance, Publishing Authors, Corporate Access, Bespoke Work) and a full rebuild of HWAK Analytics &mdash; covering <strong>270+ stocks across 47 sectors</strong> with a SEBI-compliant infrastructure from day one.</p>
-<p>It commits to a phased, demoable delivery &mdash; so Ambit sees value early, every milestone is concretely measurable, and risk stays low through every step of the build. Delivered over <strong>~11 calendar months</strong> across two phases, with a parallel <strong>6-month mobile-app workstream</strong> shipping the <strong>A-ONE Research by IE Research</strong> app on iOS and Android.</p>
+<p>It commits to a phased, demoable delivery &mdash; so Ambit sees value early, every milestone is concretely measurable, and risk stays low through every step of the build. Delivered over <strong>~15 calendar months</strong> across two phases, with a parallel <strong>6-month mobile-app workstream</strong> shipping the <strong>A-ONE Research by IE Research</strong> app on iOS and Android.</p>
 <p>Our team brings the technical depth needed for the hard parts (Word &rarr; HTML rendering, real-time integration with the Publication System, AI summary orchestration, mobile-first reading experience, SEBI compliance engine) and the discipline to ship cleanly to production. We treat compliance, security and observability as first-class &mdash; not afterthoughts.</p>
 <p>This estimate has been independently challenged by our internal product, analyst, architect and developer reviewers and adjusted for realism. We&rsquo;re ready to start the moment you give the go-ahead. Looking forward to building this with you.</p>
 </div>
